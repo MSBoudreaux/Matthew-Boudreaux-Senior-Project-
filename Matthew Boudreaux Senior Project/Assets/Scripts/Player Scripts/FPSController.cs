@@ -10,6 +10,13 @@ public class FPSController : MonoBehaviour
         Talking,
         Cutscene
     }
+    public enum InteractType
+    {
+        Dialogue,
+        Pickup,
+        Interactable,
+        Null
+    }
     public State myState;
     public GameObject self;
 
@@ -27,6 +34,10 @@ public class FPSController : MonoBehaviour
     public LayerMask groundMask;
     public bool isGrounded = true;
     public bool isCrouched = false;
+    
+    //interaction data
+    public GameObject interactable;
+    public InteractType myInteractType;
 
 
     // Start is called before the first frame update
@@ -37,11 +48,6 @@ public class FPSController : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
-        
-    }
-
-    void FixedUpdate()
     {
 
         switch (myState)
@@ -82,8 +88,6 @@ public class FPSController : MonoBehaviour
                 controller.Move(move * speed * Time.deltaTime);
 
 
-
-
                 if (Input.GetButtonDown("Jump") && isGrounded && !isCrouched)
                 {
                     velocity.y = Mathf.Sqrt(jumpHeight * gravity * -2);
@@ -102,12 +106,87 @@ public class FPSController : MonoBehaviour
                     self.transform.localScale = new Vector3(1, height, 1);
                 }
 
+                LookForward();
+                //Debug.Log("interactable: " + myInteractType);
+
+                if (Input.GetKeyDown("e") && myInteractType == InteractType.Dialogue)
+                {
+                    SetState(State.Talking);
+                    TriggerDialogue dialogue = interactable.gameObject.GetComponentInParent<TriggerDialogue>();
+                    dialogue.DialogueTrigger();
+                }
+                else if (Input.GetKeyDown("e") && myInteractType == InteractType.Interactable)
+                {
+                    //Set case for if Interactable can trigger a cutscene here:
+                    ButtonScript button = interactable.gameObject.GetComponentInParent<ButtonScript>();
+                    button.InteractTrigger();
+                }
+                else if (Input.GetKeyDown("e") && myInteractType == InteractType.Pickup)
+                {
+
+                }
+
+
+                break;
+
+            case State.Talking:
+
+                if (Input.GetKeyDown("e"))
+
+                {
+                    Debug.Log("Display next sentence.");
+                    FindObjectOfType<DialogueManager>().DisplayNextSentence();
+
+                }
+
                 break;
 
 
         }
     }
 
+    void FixedUpdate()
+    {
+
+    }
+    private GameObject LookForward()
+    {
+        Vector3 start = myCam.transform.position;
+        Vector3 forward = myCam.transform.forward;
+        RaycastHit hit;
+
+        if (Physics.Raycast(start, forward, out hit))
+        {
+
+            if (hit.collider.gameObject.tag == "Dialogue")
+            {
+                interactable = hit.collider.gameObject;
+                myInteractType = InteractType.Dialogue;
+            }
+            else if(hit.collider.gameObject.tag == "Pickup")
+            {
+                interactable = hit.collider.gameObject;
+                myInteractType = InteractType.Pickup;
+            }
+            else if(hit.collider.gameObject.tag == "Interactable")
+            {
+                interactable = hit.collider.gameObject;
+                myInteractType = InteractType.Interactable;
+            }
+            else
+            {
+                interactable = null;
+                myInteractType = InteractType.Null;
+            }
+        }
+        else
+        {
+            interactable = null;
+            myInteractType = InteractType.Null;
+        }
+
+        return interactable;
+    }
 
     public void SetState(State inState)
     {
