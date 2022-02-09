@@ -1025,6 +1025,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myState: 0
+  myAction: 0
   self: {fileID: 1282614228}
   speed: 5
   controller: {fileID: 1282614229}
@@ -1042,6 +1043,8 @@ MonoBehaviour:
   isCrouched: 0
   interactable: {fileID: 0}
   myInteractType: 0
+  attackTime: 0.5
+  parryTime: 0
 --- !u!4 &1282614231 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5274122248773814, guid: d29620989acbed748babebb07c1d7734, type: 3}
@@ -1215,7 +1218,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: 
 --- !u!222 &1491375519
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1569,7 +1572,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: 
 --- !u!222 &1773075421
 CanvasRenderer:
   m_ObjectHideFlags: 0
