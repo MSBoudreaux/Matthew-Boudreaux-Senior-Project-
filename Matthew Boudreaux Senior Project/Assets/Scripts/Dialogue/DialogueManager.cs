@@ -7,6 +7,7 @@ public class DialogueManager : MonoBehaviour
 {
     public Text nameText;
     public Text dialogueText;
+    public int waitTime;
 
 
     private Queue<string> sentences;
@@ -50,6 +51,11 @@ public class DialogueManager : MonoBehaviour
         FindObjectOfType<FPSController>().SetState(FPSController.State.FreeMovement);
         nameText.text = null;
         dialogueText.text = null;
+    }
+
+    public void DisplayTimedSentence()
+    {
+
     }
 
 }

@@ -6,6 +6,7 @@ public class TriggerDialogue : MonoBehaviour
 {
     int index = 0;
     public Dialogue[] myDialogue;
+    public bool isAutoRead; //If a trigger just causes a dialogue to appear without interrupting action.
     
 
     public void DialogueTrigger()

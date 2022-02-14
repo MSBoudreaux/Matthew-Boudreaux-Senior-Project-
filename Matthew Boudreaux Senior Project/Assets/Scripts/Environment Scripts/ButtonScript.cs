@@ -17,6 +17,12 @@ public class ButtonScript : MonoBehaviour
                 Debug.Log("Door Opening");
                 obj.GetComponent<DoorScript>().TriggerDoor();
             }
+
+            else if (obj.CompareTag("Trap"))
+            {
+                Debug.Log("Dealing Damage");
+                obj.GetComponent<DamageScript>().DealDamage();
+            }
         }
 
     }

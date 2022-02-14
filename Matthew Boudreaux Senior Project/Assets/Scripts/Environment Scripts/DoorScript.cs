@@ -16,10 +16,13 @@ public class DoorScript : MonoBehaviour
             animator.SetBool("isOpen", true);
         }
         else
+
+        if(!staysOpen)
         {
             Debug.Log("Door Opened!");
             animator.SetBool("isOpen", !animator.GetBool("isOpen"));
         }
+
     }
 
 }

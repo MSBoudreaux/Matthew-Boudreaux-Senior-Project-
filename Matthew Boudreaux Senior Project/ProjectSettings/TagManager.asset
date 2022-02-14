@@ -9,6 +9,7 @@ TagManager:
   - Pickup
   - Interactable
   - Door
+  - Trap
   layers:
   - Default
   - TransparentFX

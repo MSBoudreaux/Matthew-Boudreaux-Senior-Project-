@@ -8,6 +8,7 @@ public class FPSController : MonoBehaviour
     {
         FreeMovement,
         Talking,
+        Menu,
         Cutscene
     }
     public enum ActionState
@@ -46,6 +47,9 @@ public class FPSController : MonoBehaviour
     public GameObject interactable;
     public InteractType myInteractType;
 
+    //inventory data
+    public PlayerInventory inventory;
+
     //temp attack control data
     public float attackTime = 1.0f;
     public float parryTime = 1.0f;
@@ -65,6 +69,12 @@ public class FPSController : MonoBehaviour
         {
 
             case State.FreeMovement:
+
+                if (Input.GetKeyDown("tab"))
+                {
+                    myState = State.Menu;
+                    break;
+                }
 
                 isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
@@ -169,7 +179,12 @@ public class FPSController : MonoBehaviour
                 }
                 else if (Input.GetKeyDown("e") && myInteractType == InteractType.Pickup)
                 {
-
+                    var item = interactable.GetComponent<Item>();
+                    if (item)
+                    {
+                        inventory.inventory.AddItem(item.item);
+                        Destroy(interactable);
+                    }
                 }
 
 
@@ -187,8 +202,23 @@ public class FPSController : MonoBehaviour
 
                 break;
 
+            case State.Menu:
+                //Open menu and do menu things here
+                Debug.Log("Menu Opened");
+                myState = State.FreeMovement;
+                break;
+
 
         }
+
+    }
+
+    private void OnApplicationQuit()
+    {
+        inventory.inventory.WeaponInventory.Clear();
+        inventory.inventory.ArmorInventory.Clear();
+        inventory.inventory.HeadwearInventory.Clear();
+        inventory.inventory.ShieldInventory.Clear();
 
     }
 
