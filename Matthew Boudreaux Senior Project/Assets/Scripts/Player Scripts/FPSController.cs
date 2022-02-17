@@ -49,6 +49,7 @@ public class FPSController : MonoBehaviour
 
     //inventory data
     public PlayerInventory inventory;
+    public GameObject inventoryUI;
 
     //temp attack control data
     public float attackTime = 1.0f;
@@ -70,9 +71,10 @@ public class FPSController : MonoBehaviour
 
             case State.FreeMovement:
 
-                if (Input.GetKeyDown("tab"))
+                if (Input.GetKeyDown(KeyCode.Tab))
                 {
                     myState = State.Menu;
+                    inventoryUI.SetActive(true);
                     break;
                 }
 
@@ -179,12 +181,11 @@ public class FPSController : MonoBehaviour
                 }
                 else if (Input.GetKeyDown("e") && myInteractType == InteractType.Pickup)
                 {
-                    var item = interactable.GetComponent<Item>();
-                    if (item)
-                    {
-                        inventory.inventory.AddItem(item.item);
-                        Destroy(interactable);
-                    }
+                    var tempItem = interactable.GetComponentInParent<GroundItem>();
+
+                        inventory.inventory.AddItem(new Item(tempItem.item));
+                        Destroy(interactable.GetComponent<Transform>().root.gameObject);
+                    
                 }
 
 
@@ -205,10 +206,16 @@ public class FPSController : MonoBehaviour
             case State.Menu:
                 //Open menu and do menu things here
                 Debug.Log("Menu Opened");
-                myState = State.FreeMovement;
+                if (Input.GetKeyDown(KeyCode.Tab))
+                {
+                    myState = State.FreeMovement;
+                    inventoryUI.SetActive(false);
+
+                    Debug.Log("Menu Closed");
+                    
+                }
+
                 break;
-
-
         }
 
     }
@@ -219,6 +226,7 @@ public class FPSController : MonoBehaviour
         inventory.inventory.ArmorInventory.Clear();
         inventory.inventory.HeadwearInventory.Clear();
         inventory.inventory.ShieldInventory.Clear();
+        inventory.inventory.ConsumableInventory.Clear();
 
     }
 

@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b813042d65a1d744ba738038c9a2da05, type: 3}
   m_Name: testshield
   m_EditorClassIdentifier: 
-  prefab: {fileID: 0}
+  Name: Test Shield
+  prefab: {fileID: 6473616405613288865, guid: 3603e1a63315ee240939804e7edf7f5d, type: 3}
   type: 1
+  uiDisplay: {fileID: 0}
   description: it's a shield

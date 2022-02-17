@@ -12,3 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bacc451bc9c8edd4483743bc7c379ebd, type: 3}
   m_Name: TestInventory
   m_EditorClassIdentifier: 
+  database: {fileID: 11400000, guid: a9b77d1e4e406564688f9a59b9a90307, type: 2}
+  WeaponInventory: []
+  ShieldInventory: []
+  ArmorInventory: []
+  HeadwearInventory: []
+  ConsumableInventory: []

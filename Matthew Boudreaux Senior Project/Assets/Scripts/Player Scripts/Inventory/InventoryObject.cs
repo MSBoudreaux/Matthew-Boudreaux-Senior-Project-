@@ -7,31 +7,45 @@ using UnityEngine;
 public class InventoryObject : ScriptableObject
 
 {
+    public ItemDatabaseObject database;
     public List<InventorySlot> WeaponInventory = new List<InventorySlot>();
     public List<InventorySlot> ShieldInventory = new List<InventorySlot>();
     public List<InventorySlot> ArmorInventory = new List<InventorySlot>();
     public List<InventorySlot> HeadwearInventory = new List<InventorySlot>();
+    public List<InventorySlot> ConsumableInventory = new List<InventorySlot>();
 
-    public void AddItem(ItemObject _item)
+    public void AddItem(Item _item)
     {
         if(_item.type == ItemType.Weapon)
         {
-            WeaponInventory.Add(new InventorySlot(_item));
+            WeaponInventory.Add(new InventorySlot(_item.Id, _item));
         }
         else if (_item.type == ItemType.Shield)
         {
-            ShieldInventory.Add(new InventorySlot(_item));
+            ShieldInventory.Add(new InventorySlot(_item.Id, _item));
 
         }
         else if (_item.type == ItemType.Armor)
         {
-            ArmorInventory.Add(new InventorySlot(_item));
+            ArmorInventory.Add(new InventorySlot(_item.Id, _item));
 
         }
         else if (_item.type == ItemType.Headwear)
         {
-            HeadwearInventory.Add(new InventorySlot(_item));
+            HeadwearInventory.Add(new InventorySlot(_item.Id, _item));
 
+        }
+        else if(_item.type == ItemType.Consumable)
+        {
+            for(int i = 0; i < ConsumableInventory.Count; i++)
+            {
+                if(ConsumableInventory[i].item.Id == _item.Id)
+                {
+                    ConsumableInventory[i].AddAmount(1);
+                    return;
+                }
+            }
+            ConsumableInventory.Add(new InventorySlot(_item.Id, _item));
         }
     }
 }
@@ -40,10 +54,22 @@ public class InventoryObject : ScriptableObject
 [System.Serializable]
 public class InventorySlot
 {
-    public ItemObject item;
-
-    public InventorySlot(ItemObject _item)
+    public int ID;
+    public Item item;
+    public int amount;
+    public InventorySlot(int _id, Item _item)
     {
+        ID = _id;
         item = _item;
+    }
+    public InventorySlot(int _id, Item _item, int _amount)
+    {
+        ID = _id;
+        item = _item;
+        amount = _amount;
+    }
+    public void AddAmount(int value)
+    {
+        amount += value;
     }
 }

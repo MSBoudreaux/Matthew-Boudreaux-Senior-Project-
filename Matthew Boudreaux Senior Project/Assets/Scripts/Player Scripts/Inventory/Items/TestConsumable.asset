@@ -9,13 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c418dc1f2cfb924e9f5e8551ed3342c, type: 3}
-  m_Name: TestWep
+  m_Script: {fileID: 11500000, guid: 2ef5e88995dae994696b98a1e0fa3b05, type: 3}
+  m_Name: TestConsumable
   m_EditorClassIdentifier: 
-  Name: Test Weapon
-  prefab: {fileID: 8553166821273894118, guid: d7755d7cae5f87d4f90af414ed81f351, type: 3}
-  type: 0
+  Name: Test Potion
+  Id: 2
+  prefab: {fileID: 7078688087878626707, guid: 13851daa287a9344ab3e4051c1f0003b, type: 3}
+  type: 4
   uiDisplay: {fileID: 0}
-  description: it's a sword
-  damage: 10
-  isTwoHanded: 0
+  description: it's a potion
