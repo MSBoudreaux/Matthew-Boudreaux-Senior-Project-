@@ -7,13 +7,13 @@ public class ButtonListButton : MonoBehaviour
 {
 
     [SerializeField]
-    private Text myText;
-    private Image myImage;
+    public Item myItem;
 
 
-    public void SetText(string textString)
+
+    public void SetItem(Item _item)
     {
-        myText.text = textString;
+        myItem = _item;
     }
     public void OnClick()
     {
