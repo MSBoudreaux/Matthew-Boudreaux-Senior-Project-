@@ -18,21 +18,21 @@ public class InventoryObject : ScriptableObject
     {
         if(_item.type == ItemType.Weapon)
         {
-            WeaponInventory.Add(new InventorySlot(_item.Id, _item));
+            WeaponInventory.Add(new InventorySlot(_item.Id, _item, _item.amount));
         }
         else if (_item.type == ItemType.Shield)
         {
-            ShieldInventory.Add(new InventorySlot(_item.Id, _item));
+            ShieldInventory.Add(new InventorySlot(_item.Id, _item, _item.amount));
 
         }
         else if (_item.type == ItemType.Armor)
         {
-            ArmorInventory.Add(new InventorySlot(_item.Id, _item));
+            ArmorInventory.Add(new InventorySlot(_item.Id, _item, _item.amount));
 
         }
         else if (_item.type == ItemType.Headwear)
         {
-            HeadwearInventory.Add(new InventorySlot(_item.Id, _item));
+            HeadwearInventory.Add(new InventorySlot(_item.Id, _item, _item.amount));
 
         }
         else if(_item.type == ItemType.Consumable)
@@ -41,11 +41,11 @@ public class InventoryObject : ScriptableObject
             {
                 if(ConsumableInventory[i].item.Id == _item.Id)
                 {
-                    ConsumableInventory[i].AddAmount(1);
+                    ConsumableInventory[i].AddAmount(_item.amount);
                     return;
                 }
             }
-            ConsumableInventory.Add(new InventorySlot(_item.Id, _item));
+            ConsumableInventory.Add(new InventorySlot(_item.Id, _item, _item.amount));
         }
     }
 }
@@ -57,11 +57,7 @@ public class InventorySlot
     public int ID;
     public Item item;
     public int amount;
-    public InventorySlot(int _id, Item _item)
-    {
-        ID = _id;
-        item = _item;
-    }
+
     public InventorySlot(int _id, Item _item, int _amount)
     {
         ID = _id;

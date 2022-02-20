@@ -73,6 +73,8 @@ public class FPSController : MonoBehaviour
 
                 if (Input.GetKeyDown(KeyCode.Tab))
                 {
+                    Cursor.lockState = CursorLockMode.None;
+                    Cursor.visible = true;
                     myState = State.Menu;
                     inventoryUI.SetActive(true);
                     break;
@@ -210,7 +212,8 @@ public class FPSController : MonoBehaviour
                 {
                     myState = State.FreeMovement;
                     inventoryUI.SetActive(false);
-
+                    Cursor.lockState = CursorLockMode.Locked;
+                    Cursor.visible = false;
                     Debug.Log("Menu Closed");
                     
                 }

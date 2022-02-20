@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: testshield
   m_EditorClassIdentifier: 
   Name: Test Shield
+  Id: 1
+  amt: 1
   prefab: {fileID: 6473616405613288865, guid: 3603e1a63315ee240939804e7edf7f5d, type: 3}
   type: 1
   uiDisplay: {fileID: 0}

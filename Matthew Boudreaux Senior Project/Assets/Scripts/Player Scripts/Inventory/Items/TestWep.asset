@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: TestWep
   m_EditorClassIdentifier: 
   Name: Test Weapon
+  Id: 0
+  amt: 1
   prefab: {fileID: 8553166821273894118, guid: d7755d7cae5f87d4f90af414ed81f351, type: 3}
   type: 0
   uiDisplay: {fileID: 0}

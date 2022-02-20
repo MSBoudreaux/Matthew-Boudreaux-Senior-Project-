@@ -74,4 +74,9 @@ public class PlayerStats : MonoBehaviour
     {
         stress += _stress;
     }
+
+    public void Equip(Item _item)
+    {
+
+    }
 }
