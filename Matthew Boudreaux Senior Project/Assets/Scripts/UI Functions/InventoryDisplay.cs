@@ -15,6 +15,12 @@ public class InventoryDisplay : MonoBehaviour
     public List<GameObject> myInventoryMenus = new List<GameObject>();
     public List<GameObject> buttons;
 
+    //Display selected item info
+    public Text selectedItemName;
+    public Text selectedItemDescription;
+    public Text selectedItemStat1;
+    public Text selectedItemStat2;
+
     void Start()
     {
         //CreateDisplay();
@@ -72,8 +78,11 @@ public class InventoryDisplay : MonoBehaviour
                         GameObject newButton = Instantiate(buttonTemplate);
                         newButton.SetActive(true);
                         newButton.GetComponent<ButtonListButton>().SetItem(myInventory.WeaponInventory[i].item);
+
                         newButton.GetComponentInChildren<Text>().text = newButton.GetComponent<ButtonListButton>().myItem.Name;
+
                         newButton.transform.SetParent(myInventoryMenus[0].transform, false);
+
 
                         itemsDisplayed.Add(myInventory.WeaponInventory[i], newButton);
                         buttons.Add(newButton);
@@ -89,6 +98,8 @@ public class InventoryDisplay : MonoBehaviour
                         GameObject newButton = Instantiate(buttonTemplate);
                         newButton.SetActive(true);
                         newButton.GetComponent<ButtonListButton>().SetItem(myInventory.ShieldInventory[i].item);
+
+
                         newButton.GetComponentInChildren<Text>().text = newButton.GetComponent<ButtonListButton>().myItem.Name;
                         newButton.transform.SetParent(myInventoryMenus[1].transform, false);
 
@@ -105,6 +116,8 @@ public class InventoryDisplay : MonoBehaviour
                         GameObject newButton = Instantiate(buttonTemplate);
                         newButton.SetActive(true);
                         newButton.GetComponent<ButtonListButton>().SetItem(myInventory.ArmorInventory[i].item);
+
+
                         newButton.GetComponentInChildren<Text>().text = newButton.GetComponent<ButtonListButton>().myItem.Name;
                         newButton.transform.SetParent(myInventoryMenus[2].transform, false);
 
@@ -121,6 +134,8 @@ public class InventoryDisplay : MonoBehaviour
                         GameObject newButton = Instantiate(buttonTemplate);
                         newButton.SetActive(true);
                         newButton.GetComponent<ButtonListButton>().SetItem(myInventory.HeadwearInventory[i].item);
+
+
                         newButton.GetComponentInChildren<Text>().text = newButton.GetComponent<ButtonListButton>().myItem.Name;
                         newButton.transform.SetParent(myInventoryMenus[3].transform, false);
 
@@ -137,6 +152,7 @@ public class InventoryDisplay : MonoBehaviour
                         GameObject newButton = Instantiate(buttonTemplate);
                         newButton.SetActive(true);
                         newButton.GetComponent<ButtonListButton>().SetItem(myInventory.ConsumableInventory[i].item);
+
                         newButton.GetComponentInChildren<Text>().text = newButton.GetComponent<ButtonListButton>().myItem.Name + "(" + myInventory.ConsumableInventory[i].amount + ")";
                         
                         newButton.transform.SetParent(myInventoryMenus[4].transform, false);

@@ -7,6 +7,8 @@ using UnityEngine;
 public class ConsumableObject : ItemObject
 {
 
+    public int healValue;
+
     private void Awake()
     {
         type = ItemType.Consumable;

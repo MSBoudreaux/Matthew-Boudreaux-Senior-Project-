@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 570421869616627266}
   - component: {fileID: 391505811040506530}
   m_Layer: 5
-  m_Name: Button
+  m_Name: ButtonListButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -121,7 +121,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 570421869616627267}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 391505811040506530}
+        m_TargetAssemblyTypeName: ButtonListButton, Assembly-CSharp
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &391505811040506530
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -140,6 +152,9 @@ MonoBehaviour:
     amount: 0
     type: 0
     isEquipped: 0
+  itemToDisplay: {fileID: 0}
+  myItemList: {fileID: 11400000, guid: a9b77d1e4e406564688f9a59b9a90307, type: 2}
+  myDisplay: {fileID: 394161588362883494, guid: d29620989acbed748babebb07c1d7734, type: 3}
 --- !u!1 &570421871503920703
 GameObject:
   m_ObjectHideFlags: 0

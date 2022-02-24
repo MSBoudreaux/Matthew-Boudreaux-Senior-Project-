@@ -13,10 +13,17 @@ public class PlayerStats : MonoBehaviour
     public int maxStamina = 3;
     public float stamRegen;
 
-    public WeaponObject equippedWeapon;
-    public ShieldObject equippedShield;
-    public ArmorObject equippedArmor;
-    public HeadwearObject equippedHeadwear;
+    public ItemDatabaseObject itemDB;
+
+    public Item equippedWeapon;
+    public Item equippedShield;
+    public Item equippedArmor;
+    public Item equippedHeadwear;
+
+    public WeaponObject weaponObject;
+    public ShieldObject shieldObject;
+    public ArmorObject armorObject;
+    public HeadwearObject headwearObject;
 
     //UI element references
     public Slider healthBar;
@@ -77,6 +84,41 @@ public class PlayerStats : MonoBehaviour
 
     public void Equip(Item _item)
     {
+        switch (_item.type)
+        {
+            case ItemType.Weapon:
+                if(equippedWeapon != _item)
+                {
+                    equippedWeapon = _item;
+                    weaponObject = (WeaponObject)itemDB.Items[_item.Id];
+                }
+                break;
+            case ItemType.Shield:
+                if (equippedShield != _item)
+                {
+                    equippedShield = _item;
+                    shieldObject = (ShieldObject)itemDB.Items[_item.Id];
+                }
+                break;
+            case ItemType.Armor:
+                if (equippedArmor != _item)
+                {
+                    equippedArmor = _item;
+                    armorObject = (ArmorObject)itemDB.Items[_item.Id];
+                }
+                break;
+            case ItemType.Headwear:
+                if (equippedHeadwear != _item)
+                {
+                    equippedHeadwear = _item;
+                    headwearObject = (HeadwearObject)itemDB.Items[_item.Id];
+                }
+                break;
+            case ItemType.Consumable:
+                break;
 
+
+
+        }
     }
 }

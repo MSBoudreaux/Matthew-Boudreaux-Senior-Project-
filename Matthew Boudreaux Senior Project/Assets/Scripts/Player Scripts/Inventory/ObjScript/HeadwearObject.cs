@@ -6,6 +6,9 @@ using UnityEngine;
 
 public class HeadwearObject : ItemObject
 {
+    public int statIncrease;
+    public ItemType itemTypeToBuff;
+
     private void Awake()
     {
         type = ItemType.Headwear;

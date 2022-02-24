@@ -18,4 +18,5 @@ MonoBehaviour:
   prefab: {fileID: 7078688087878626707, guid: 13851daa287a9344ab3e4051c1f0003b, type: 3}
   type: 4
   uiDisplay: {fileID: 0}
-  description: it's a potion
+  description: 'it''s a potion:'
+  healValue: 25

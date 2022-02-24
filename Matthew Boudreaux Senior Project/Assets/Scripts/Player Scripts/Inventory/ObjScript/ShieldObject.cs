@@ -6,6 +6,8 @@ using UnityEngine;
 
 public class ShieldObject : ItemObject
 {
+    public int blockRating;
+    
     private void Awake()
     {
         type = ItemType.Shield;

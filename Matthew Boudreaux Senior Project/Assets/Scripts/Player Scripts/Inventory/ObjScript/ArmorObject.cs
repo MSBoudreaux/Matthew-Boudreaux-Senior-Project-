@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class ArmorObject : ItemObject
 {
+    public int defenseRating;
 
     private void Awake()
     {
