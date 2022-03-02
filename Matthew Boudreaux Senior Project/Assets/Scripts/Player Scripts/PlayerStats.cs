@@ -13,6 +13,7 @@ public class PlayerStats : MonoBehaviour
     public int maxStamina = 3;
     public float stamRegen;
 
+    //Equipped Item Stats
     public ItemDatabaseObject itemDB;
 
     public Item equippedWeapon;
@@ -86,16 +87,26 @@ public class PlayerStats : MonoBehaviour
     {
         switch (_item.type)
         {
+            
             case ItemType.Weapon:
                 if(equippedWeapon != _item)
                 {
+                    equippedWeapon.isEquipped = false;
+
+                    _item.isEquipped = true;
+
                     equippedWeapon = _item;
+                   
                     weaponObject = (WeaponObject)itemDB.Items[_item.Id];
                 }
                 break;
             case ItemType.Shield:
                 if (equippedShield != _item)
                 {
+                    equippedShield.isEquipped = false;
+
+                    _item.isEquipped = true;
+
                     equippedShield = _item;
                     shieldObject = (ShieldObject)itemDB.Items[_item.Id];
                 }
@@ -103,6 +114,10 @@ public class PlayerStats : MonoBehaviour
             case ItemType.Armor:
                 if (equippedArmor != _item)
                 {
+                    equippedArmor.isEquipped = false;
+
+                    _item.isEquipped = true;
+
                     equippedArmor = _item;
                     armorObject = (ArmorObject)itemDB.Items[_item.Id];
                 }
@@ -110,6 +125,10 @@ public class PlayerStats : MonoBehaviour
             case ItemType.Headwear:
                 if (equippedHeadwear != _item)
                 {
+                    equippedHeadwear.isEquipped = false;
+
+                    _item.isEquipped = true;
+
                     equippedHeadwear = _item;
                     headwearObject = (HeadwearObject)itemDB.Items[_item.Id];
                 }

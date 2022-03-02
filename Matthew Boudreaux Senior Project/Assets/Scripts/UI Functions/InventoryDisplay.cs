@@ -16,6 +16,8 @@ public class InventoryDisplay : MonoBehaviour
     public List<GameObject> buttons;
 
     //Display selected item info
+    public Item myCurrentItem;
+    public GameObject myCurrentItemButton;
     public Text selectedItemName;
     public Text selectedItemDescription;
     public Text selectedItemStat1;
@@ -169,5 +171,10 @@ public class InventoryDisplay : MonoBehaviour
     public void SetInventoryToDisplay(ItemType inType)
     {
         inventoryToDisplay = inType;
+    }
+
+    public void SetCurrentItem(Item _item)
+    {
+        myCurrentItem = _item;
     }
 }

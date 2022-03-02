@@ -9,6 +9,7 @@ public class ButtonListButton : MonoBehaviour
     public ItemObject itemToDisplay;
     public ItemDatabaseObject myItemList;
     public InventoryDisplay myInventoryDisplay;
+    public GameObject equipIcon;
 
     [SerializeField]
     public Item myItem;
@@ -16,6 +17,7 @@ public class ButtonListButton : MonoBehaviour
     public void Awake()
     {
         myInventoryDisplay = GameObject.Find("InventoryMenu").GetComponent<InventoryDisplay>();
+        equipIcon = transform.Find("EquipIcon").gameObject;
     }
 
 
@@ -25,6 +27,9 @@ public class ButtonListButton : MonoBehaviour
     }
     public void OnClick()
     {
+        myInventoryDisplay.SetCurrentItem(myItem);
+        myInventoryDisplay.myCurrentItemButton = transform.gameObject;
+        
         itemToDisplay = myItemList.Items[myItem.Id];
         myInventoryDisplay.selectedItemName.text = myItem.Name;
         myInventoryDisplay.selectedItemDescription.text = itemToDisplay.description;
@@ -44,23 +49,21 @@ public class ButtonListButton : MonoBehaviour
                 myInventoryDisplay.selectedItemStat1.text = "Armor Rating : " + armorToDisplay.defenseRating.ToString();
                 break;
             case ItemType.Headwear:
+                HeadwearObject headwearToDisplay = (HeadwearObject)myItemList.Items[myItem.Id];
+                myInventoryDisplay.selectedItemStat1.text = "Placeholder : " + headwearToDisplay.itemTypeToBuff.ToString();
                 break;
             case ItemType.Consumable:
                 ConsumableObject consumableToDisplay = (ConsumableObject)myItemList.Items[myItem.Id];
                 if(consumableToDisplay.healValue != 0)
                 {
-                    
+                    myInventoryDisplay.selectedItemStat1.text = "Healing : " + consumableToDisplay.healValue.ToString();
                 }
                 break;
-
-
-
-
         }
-
-
-
-
-
+        
+    }
+    public void SetEquipIcon(bool _in)
+    {
+        equipIcon.SetActive(_in);
     }
 }

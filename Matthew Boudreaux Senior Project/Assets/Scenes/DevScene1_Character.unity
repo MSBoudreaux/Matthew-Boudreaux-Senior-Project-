@@ -612,7 +612,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &111740849
 RectTransform:
   m_ObjectHideFlags: 0
@@ -690,6 +690,13 @@ MonoBehaviour:
   - {fileID: 930531343}
   - {fileID: 765242252}
   buttons: []
+  myCurrentItem:
+    Name: 
+    Id: 0
+    amount: 0
+    type: 0
+    isEquipped: 0
+  myCurrentItemButton: {fileID: 0}
   selectedItemName: {fileID: 1844390996}
   selectedItemDescription: {fileID: 902439864}
   selectedItemStat1: {fileID: 140475728}
@@ -4009,6 +4016,7 @@ GameObject:
   - component: {fileID: 1104817181}
   - component: {fileID: 1104817180}
   - component: {fileID: 1104817179}
+  - component: {fileID: 1104817182}
   m_Layer: 5
   m_Name: EquipButton
   m_TagString: Untagged
@@ -4080,13 +4088,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 394161588362883494, guid: d29620989acbed748babebb07c1d7734, type: 3}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 1104817182}
+        m_TargetAssemblyTypeName: EquipButton, Assembly-CSharp
+        m_MethodName: OnClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -4130,6 +4138,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1104817177}
   m_CullTransparentMesh: 1
+--- !u!114 &1104817182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1104817177}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6070d794bb67734185d3215d19ae907, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myStats: {fileID: 1282614233}
+  myInventory: {fileID: 111740851}
 --- !u!1 &1166382286
 GameObject:
   m_ObjectHideFlags: 0
@@ -5380,7 +5402,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
