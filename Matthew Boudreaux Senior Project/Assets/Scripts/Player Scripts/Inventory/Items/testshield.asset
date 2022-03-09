@@ -19,3 +19,5 @@ MonoBehaviour:
   type: 1
   uiDisplay: {fileID: 0}
   description: it's a shield
+  blockRating: 50
+  parryTime: 1

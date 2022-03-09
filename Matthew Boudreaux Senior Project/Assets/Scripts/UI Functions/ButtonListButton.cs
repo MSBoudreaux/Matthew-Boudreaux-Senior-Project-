@@ -20,6 +20,13 @@ public class ButtonListButton : MonoBehaviour
         equipIcon = transform.Find("EquipIcon").gameObject;
     }
 
+    public void OnEnable()  
+    {
+        if(myItem.type == ItemType.Consumable)
+        {
+            transform.gameObject.GetComponentInChildren<Text>().text = myItem.Name + "(" + myInventoryDisplay.itemsDisplayed[transform.gameObject].amount + ")";
+        }
+    }
 
     public void SetItem(Item _item)
     {

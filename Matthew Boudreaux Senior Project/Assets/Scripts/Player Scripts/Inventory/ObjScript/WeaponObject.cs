@@ -7,6 +7,7 @@ using UnityEngine;
 public class WeaponObject : ItemObject
 {
     public int damage;
+    public float attackSpeed;
     public bool isTwoHanded;
 
     private void Awake()

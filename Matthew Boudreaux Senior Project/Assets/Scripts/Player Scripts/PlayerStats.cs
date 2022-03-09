@@ -13,6 +13,12 @@ public class PlayerStats : MonoBehaviour
     public int maxStamina = 3;
     public float stamRegen;
 
+    public float attackSpeed = 0.5f;
+    public float parryLength = 0.5f;
+
+    
+
+
     //Equipped Item Stats
     public ItemDatabaseObject itemDB;
 
@@ -32,6 +38,8 @@ public class PlayerStats : MonoBehaviour
     public List<Image> stamOrbs;
     public Slider stamRegenBar;
 
+    
+
     //Define unique abilities to check your items for here
     public enum Ability
     {
@@ -43,6 +51,7 @@ public class PlayerStats : MonoBehaviour
     void Start()
     {
         health = maxHealth;
+        
     }
 
     // Update is called once per frame
@@ -60,6 +69,16 @@ public class PlayerStats : MonoBehaviour
 
         updateHealthBar();
         updateStressBar();
+
+        if(equippedWeapon == null)
+        {
+            attackSpeed = 0.5f;
+        }
+
+        if(equippedShield == null)
+        {
+            parryLength = 0.5f;
+        }
 
     }
 
@@ -98,6 +117,8 @@ public class PlayerStats : MonoBehaviour
                     equippedWeapon = _item;
                    
                     weaponObject = (WeaponObject)itemDB.Items[_item.Id];
+
+                    attackSpeed = weaponObject.attackSpeed;
                 }
                 break;
             case ItemType.Shield:
@@ -109,6 +130,8 @@ public class PlayerStats : MonoBehaviour
 
                     equippedShield = _item;
                     shieldObject = (ShieldObject)itemDB.Items[_item.Id];
+
+                    parryLength = shieldObject.parryTime;
                 }
                 break;
             case ItemType.Armor:

@@ -20,4 +20,5 @@ MonoBehaviour:
   uiDisplay: {fileID: 0}
   description: it's a sword
   damage: 10
+  attackSpeed: 1
   isTwoHanded: 0

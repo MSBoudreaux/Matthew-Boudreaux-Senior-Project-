@@ -11,7 +11,7 @@ public class InventoryDisplay : MonoBehaviour
     public InventoryObject myInventory;
     public ItemType inventoryToDisplay;
     public int currentInventory;
-    Dictionary<InventorySlot, GameObject> itemsDisplayed = new Dictionary<InventorySlot, GameObject>();
+    public Dictionary<GameObject, InventorySlot> itemsDisplayed = new Dictionary<GameObject, InventorySlot>();
     public List<GameObject> myInventoryMenus = new List<GameObject>();
     public List<GameObject> buttons;
 
@@ -75,7 +75,7 @@ public class InventoryDisplay : MonoBehaviour
 
                 for (int i = 0; i < myInventory.WeaponInventory.Count; i++)
                 {
-                    if (!itemsDisplayed.ContainsKey(myInventory.WeaponInventory[i]))
+                    if (!itemsDisplayed.ContainsValue(myInventory.WeaponInventory[i]))
                     {
                         GameObject newButton = Instantiate(buttonTemplate);
                         newButton.SetActive(true);
@@ -86,7 +86,7 @@ public class InventoryDisplay : MonoBehaviour
                         newButton.transform.SetParent(myInventoryMenus[0].transform, false);
 
 
-                        itemsDisplayed.Add(myInventory.WeaponInventory[i], newButton);
+                        itemsDisplayed.Add(newButton, myInventory.WeaponInventory[i]);
                         buttons.Add(newButton);
                     }
                 }
@@ -95,7 +95,7 @@ public class InventoryDisplay : MonoBehaviour
             case ItemType.Shield:
                 for (int i = 0; i < myInventory.ShieldInventory.Count; i++)
                 {
-                    if (!itemsDisplayed.ContainsKey(myInventory.ShieldInventory[i]))
+                    if (!itemsDisplayed.ContainsValue(myInventory.ShieldInventory[i]))
                     {
                         GameObject newButton = Instantiate(buttonTemplate);
                         newButton.SetActive(true);
@@ -105,7 +105,7 @@ public class InventoryDisplay : MonoBehaviour
                         newButton.GetComponentInChildren<Text>().text = newButton.GetComponent<ButtonListButton>().myItem.Name;
                         newButton.transform.SetParent(myInventoryMenus[1].transform, false);
 
-                        itemsDisplayed.Add(myInventory.ShieldInventory[i], newButton);
+                        itemsDisplayed.Add(newButton, myInventory.ShieldInventory[i]);
                         buttons.Add(newButton);
                     }
                 }
@@ -113,7 +113,7 @@ public class InventoryDisplay : MonoBehaviour
             case ItemType.Armor:
                 for (int i = 0; i < myInventory.ArmorInventory.Count; i++)
                 {
-                    if (!itemsDisplayed.ContainsKey(myInventory.ArmorInventory[i]))
+                    if (!itemsDisplayed.ContainsValue(myInventory.ArmorInventory[i]))
                     {
                         GameObject newButton = Instantiate(buttonTemplate);
                         newButton.SetActive(true);
@@ -123,7 +123,7 @@ public class InventoryDisplay : MonoBehaviour
                         newButton.GetComponentInChildren<Text>().text = newButton.GetComponent<ButtonListButton>().myItem.Name;
                         newButton.transform.SetParent(myInventoryMenus[2].transform, false);
 
-                        itemsDisplayed.Add(myInventory.ArmorInventory[i], newButton);
+                        itemsDisplayed.Add(newButton, myInventory.ArmorInventory[i]);
                         buttons.Add(newButton);
                     }
                 }
@@ -131,7 +131,7 @@ public class InventoryDisplay : MonoBehaviour
             case ItemType.Headwear:
                 for (int i = 0; i < myInventory.HeadwearInventory.Count; i++)
                 {
-                    if (!itemsDisplayed.ContainsKey(myInventory.HeadwearInventory[i]))
+                    if (!itemsDisplayed.ContainsValue(myInventory.HeadwearInventory[i]))
                     {
                         GameObject newButton = Instantiate(buttonTemplate);
                         newButton.SetActive(true);
@@ -141,7 +141,7 @@ public class InventoryDisplay : MonoBehaviour
                         newButton.GetComponentInChildren<Text>().text = newButton.GetComponent<ButtonListButton>().myItem.Name;
                         newButton.transform.SetParent(myInventoryMenus[3].transform, false);
 
-                        itemsDisplayed.Add(myInventory.HeadwearInventory[i], newButton);
+                        itemsDisplayed.Add(newButton, myInventory.HeadwearInventory[i] );
                         buttons.Add(newButton);
                     }
                 }
@@ -149,7 +149,7 @@ public class InventoryDisplay : MonoBehaviour
             case ItemType.Consumable:
                 for (int i = 0; i < myInventory.ConsumableInventory.Count; i++)
                 {
-                    if (!itemsDisplayed.ContainsKey(myInventory.ConsumableInventory[i]))
+                    if (!itemsDisplayed.ContainsValue(myInventory.ConsumableInventory[i]))
                     {
                         GameObject newButton = Instantiate(buttonTemplate);
                         newButton.SetActive(true);
@@ -159,7 +159,7 @@ public class InventoryDisplay : MonoBehaviour
                         
                         newButton.transform.SetParent(myInventoryMenus[4].transform, false);
 
-                        itemsDisplayed.Add(myInventory.ConsumableInventory[i], newButton);
+                        itemsDisplayed.Add(newButton, myInventory.ConsumableInventory[i]);
                         buttons.Add(newButton);
                     }
                 }
@@ -167,6 +167,7 @@ public class InventoryDisplay : MonoBehaviour
         }
             
     }
+
 
     public void SetInventoryToDisplay(ItemType inType)
     {

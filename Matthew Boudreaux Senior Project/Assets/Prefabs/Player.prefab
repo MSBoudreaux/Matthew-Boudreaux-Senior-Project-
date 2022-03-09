@@ -3028,6 +3028,50 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Options
+--- !u!1 &1036302595
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1036302596}
+  - component: {fileID: 1036302597}
+  m_Layer: 0
+  m_Name: PlayerManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1036302596
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1036302595}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5274122248773814}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1036302597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1036302595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 487663e48f988e24b8bad6fde25ea543, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
 --- !u!1 &1104817177
 GameObject:
   m_ObjectHideFlags: 0
@@ -4679,6 +4723,7 @@ Transform:
   - {fileID: 1614963750}
   - {fileID: 1166382287}
   - {fileID: 690800006}
+  - {fileID: 1036302596}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4733,6 +4778,7 @@ MonoBehaviour:
   myInteractType: 0
   inventory: {fileID: 1282614232}
   inventoryUI: {fileID: 111740848}
+  myStats: {fileID: 1282614233}
   attackTime: 0.5
   parryTime: 0.5
 --- !u!114 &1282614232
@@ -4766,6 +4812,8 @@ MonoBehaviour:
   stamina: 0
   maxStamina: 3
   stamRegen: 0
+  attackSpeed: 0
+  parryLength: 0
   itemDB: {fileID: 11400000, guid: a9b77d1e4e406564688f9a59b9a90307, type: 2}
   equippedWeapon:
     Name: 

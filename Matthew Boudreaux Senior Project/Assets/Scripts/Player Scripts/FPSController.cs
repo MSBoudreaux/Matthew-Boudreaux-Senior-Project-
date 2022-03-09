@@ -15,7 +15,9 @@ public class FPSController : MonoBehaviour
     {
         Null,
         Attack,
-        Block
+        Block,
+        Parry,
+        UseItem
     }
     public enum InteractType
     {
@@ -52,8 +54,10 @@ public class FPSController : MonoBehaviour
     public GameObject inventoryUI;
 
     //temp attack control data
-    public float attackTime = 1.0f;
-    public float parryTime = 1.0f;
+    public PlayerStats myStats;
+    public float attackTime;
+    public float parryTime;
+    public Coroutine c;
 
 
     // Start is called before the first frame update
@@ -71,8 +75,11 @@ public class FPSController : MonoBehaviour
 
             case State.FreeMovement:
 
+                UpdateStats();
+
                 if (Input.GetKeyDown(KeyCode.Tab))
                 {
+                    Debug.Log("Menu Opened");
                     Cursor.lockState = CursorLockMode.None;
                     Cursor.visible = true;
                     myState = State.Menu;
@@ -138,21 +145,41 @@ public class FPSController : MonoBehaviour
                     case ActionState.Null:
                         if (Input.GetMouseButtonDown(0))
                         {
+                            Debug.Log("Starting Attack");
                             myAction = ActionState.Attack;
-                            StartAttack();
+                            c = StartCoroutine(attackWait(attackTime));
+
 
                         }
                         else if (Input.GetMouseButton(1))
                         {
-                            myAction = ActionState.Block;
+                            myAction = ActionState.Parry;
+                            c = StartCoroutine(parryWait(parryTime));
                             Debug.Log("Starting to block");
 
+                        }
+
+                        else if (Input.GetKeyDown("q"))
+                        {
+                            myAction = ActionState.UseItem;
+                            Debug.Log("Using Item");
                         }
 
                         break;
 
                     case ActionState.Attack:
+                        break;
 
+                    case ActionState.Parry:
+
+                        if (Input.GetMouseButtonUp(1))
+                        {
+                            Debug.Log("Ending block early");
+                            StopCoroutine(c);
+                            c = null;
+                            myAction = ActionState.Null;
+
+                        }
                         break;
 
                     case ActionState.Block:
@@ -207,7 +234,7 @@ public class FPSController : MonoBehaviour
 
             case State.Menu:
                 //Open menu and do menu things here
-                Debug.Log("Menu Opened");
+
                 if (Input.GetKeyDown(KeyCode.Tab))
                 {
                     myState = State.FreeMovement;
@@ -286,19 +313,35 @@ public class FPSController : MonoBehaviour
     {
         return FindObjectOfType<FPSController>().myState;
     }
-    public void StartAttack()
-    {
-        //Put stuff that happens on attack here
-        Debug.Log("Starting Attack");
-        StartCoroutine(attackWait(attackTime));
 
+    public void UpdateStats()
+    {
+        attackTime = myStats.attackSpeed;
+        parryTime = myStats.parryLength;
     }
+
 
     public IEnumerator attackWait(float time)
     {
         yield return new WaitForSeconds(time);
         Debug.Log("Attack done");
         myAction = ActionState.Null;
-
+        c = null;
     }
+
+    public IEnumerator parryWait(float time)
+    {
+        yield return new WaitForSeconds(time);
+        if (Input.GetMouseButton(1))
+        {
+            myAction = ActionState.Block;
+        }
+        else
+        {
+            myAction = ActionState.Null;
+        }
+        Debug.Log("Parry done");
+        c = null;
+    }
+
 }
