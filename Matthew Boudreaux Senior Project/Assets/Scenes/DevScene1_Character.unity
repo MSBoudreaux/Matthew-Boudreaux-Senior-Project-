@@ -1885,6 +1885,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 111740848, guid: d29620989acbed748babebb07c1d7734, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 579686857, guid: d29620989acbed748babebb07c1d7734, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -1906,12 +1910,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1282614233, guid: d29620989acbed748babebb07c1d7734, type: 3}
-      propertyPath: attackSpeed
-      value: 0.5
+      propertyPath: Damage
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1282614233, guid: d29620989acbed748babebb07c1d7734, type: 3}
-      propertyPath: parryLength
-      value: 0.5
+      propertyPath: BlockRating
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1653429280, guid: d29620989acbed748babebb07c1d7734, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1653429280, guid: d29620989acbed748babebb07c1d7734, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2064422042, guid: d29620989acbed748babebb07c1d7734, type: 3}
       propertyPath: m_AnchorMax.x

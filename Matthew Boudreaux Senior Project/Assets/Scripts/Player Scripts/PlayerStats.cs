@@ -13,9 +13,22 @@ public class PlayerStats : MonoBehaviour
     public int maxStamina = 3;
     public float stamRegen;
 
-    public float attackSpeed = 0.5f;
-    public float parryLength = 0.5f;
+    //Base stats: if no items equipped, reset to these.
 
+    public float baseAttackSpeed = 0.5f;
+    public int baseDamage = 3;
+    public float baseParryLength = 0.5f;
+    public int baseBlockRating = 15;
+
+    
+    //Character Stats
+    public float attackSpeed;
+    public float parryLength;
+    public int Damage;
+    public int Defense;
+    public int BlockRating;
+    
+    
     
 
 
@@ -70,16 +83,6 @@ public class PlayerStats : MonoBehaviour
         updateHealthBar();
         updateStressBar();
 
-        if(equippedWeapon == null)
-        {
-            attackSpeed = 0.5f;
-        }
-
-        if(equippedShield == null)
-        {
-            parryLength = 0.5f;
-        }
-
     }
 
     public void updateHealthBar()
@@ -118,7 +121,13 @@ public class PlayerStats : MonoBehaviour
                    
                     weaponObject = (WeaponObject)itemDB.Items[_item.Id];
 
+                    Damage = weaponObject.damage;
                     attackSpeed = weaponObject.attackSpeed;
+
+                    if (weaponObject.isTwoHanded)
+                    {
+                        Unequip(equippedShield);
+                    }
                 }
                 break;
             case ItemType.Shield:
@@ -131,7 +140,13 @@ public class PlayerStats : MonoBehaviour
                     equippedShield = _item;
                     shieldObject = (ShieldObject)itemDB.Items[_item.Id];
 
+                    BlockRating = shieldObject.blockRating;
                     parryLength = shieldObject.parryTime;
+
+                    if (weaponObject != null && weaponObject.isTwoHanded)
+                    {
+                        Unequip(equippedWeapon);
+                    }
                 }
                 break;
             case ItemType.Armor:
@@ -143,6 +158,8 @@ public class PlayerStats : MonoBehaviour
 
                     equippedArmor = _item;
                     armorObject = (ArmorObject)itemDB.Items[_item.Id];
+
+                    Defense = armorObject.defenseRating;
                 }
                 break;
             case ItemType.Headwear:
@@ -159,8 +176,52 @@ public class PlayerStats : MonoBehaviour
             case ItemType.Consumable:
                 break;
 
+        }
 
 
+    }
+
+    public void Unequip(Item inItem)
+    {
+        switch (inItem.type)
+        {
+            case ItemType.Weapon:
+                equippedWeapon.isEquipped = false;
+                equippedWeapon = null;
+                weaponObject = null;
+                break;
+            case ItemType.Shield:
+                equippedShield.isEquipped = false;
+                equippedShield = null;
+                shieldObject = null;
+                break;
+            case ItemType.Armor:
+                equippedArmor.isEquipped = false;
+                equippedArmor = null;
+                armorObject = null;
+                Defense = 0;
+                break;
+            case ItemType.Headwear:
+                equippedHeadwear.isEquipped = false;
+                equippedHeadwear = null;
+                headwearObject = null;
+                break;
+            case ItemType.Consumable:
+                break;
+
+        }
+
+        if (equippedWeapon == null)
+        {
+            attackSpeed = baseAttackSpeed;
+            Damage = baseDamage;
+
+        }
+
+        if (equippedShield == null)
+        {
+            BlockRating = baseBlockRating;
+            parryLength = baseParryLength;
         }
     }
 }
