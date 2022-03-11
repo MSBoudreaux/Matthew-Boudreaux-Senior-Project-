@@ -39,11 +39,13 @@ public class PlayerStats : MonoBehaviour
     public Item equippedShield;
     public Item equippedArmor;
     public Item equippedHeadwear;
+    public Item equippedConsumable;
 
     public WeaponObject weaponObject;
     public ShieldObject shieldObject;
     public ArmorObject armorObject;
     public HeadwearObject headwearObject;
+    public ConsumableObject consumableObject;
 
     //UI element references
     public Slider healthBar;
@@ -174,6 +176,15 @@ public class PlayerStats : MonoBehaviour
                 }
                 break;
             case ItemType.Consumable:
+                if(equippedConsumable != _item)
+                {
+                    equippedConsumable.isEquipped = false;
+
+                    _item.isEquipped = true;
+
+                    equippedConsumable = _item;
+                    consumableObject = (ConsumableObject)itemDB.Items[_item.Id];
+                }
                 break;
 
         }
@@ -223,5 +234,24 @@ public class PlayerStats : MonoBehaviour
             BlockRating = baseBlockRating;
             parryLength = baseParryLength;
         }
+    }
+
+    public void UseItem(Item _item) 
+    {
+        if(_item.type == ItemType.Consumable && _item.amount != 0)
+        {
+            if (consumableObject.healType)
+            {
+                AddHealth(consumableObject.healValue);
+            }
+            else
+            {
+                AddStress(-consumableObject.healValue);
+            }
+
+            _item.amount--;
+
+        }
+
     }
 }

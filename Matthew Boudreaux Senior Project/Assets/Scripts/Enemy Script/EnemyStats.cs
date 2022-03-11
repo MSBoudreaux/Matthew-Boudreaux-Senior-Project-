@@ -4,15 +4,39 @@ using UnityEngine;
 
 public class EnemyStats : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+
+    public int health;
+    public int maxHealth;
+
+    public int primaryDamage;
+    public int secondaryDamage;
+
+    public float LookRange;
+    public float speed;
+    public float chaseSpeed;
+    public float chaseDistance;
+
+    //Types of enemies. Used by EnemyController to determine enemy behavior.
+    public enum EnemyType
     {
-        
+        skeleMelee,
+        skeleRanged,
+        skeleChest
+    }
+    public EnemyType myType;
+
+    public void Start()
+    {
+        health = maxHealth;
+    }
+    public int GetHealth()
+    {
+        return health;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void AddHealth(int inHealth)
     {
-        
+        health += inHealth;
     }
+
 }

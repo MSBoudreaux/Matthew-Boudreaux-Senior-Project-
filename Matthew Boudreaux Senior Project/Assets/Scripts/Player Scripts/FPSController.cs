@@ -162,6 +162,8 @@ public class FPSController : MonoBehaviour
                         else if (Input.GetKeyDown("q"))
                         {
                             myAction = ActionState.UseItem;
+                            myStats.UseItem(myStats.equippedConsumable);
+                            c = StartCoroutine(itemWait(2.0f));
                             Debug.Log("Using Item");
                         }
 
@@ -188,6 +190,9 @@ public class FPSController : MonoBehaviour
                             Debug.Log("Ending block");
                             myAction = ActionState.Null;
                         }
+                        break;
+                    case ActionState.UseItem:
+                        
                         break;
 
                 }
@@ -341,6 +346,14 @@ public class FPSController : MonoBehaviour
             myAction = ActionState.Null;
         }
         Debug.Log("Parry done");
+        c = null;
+    }
+
+    public IEnumerator itemWait(float time)
+    {
+        yield return new WaitForSeconds(time);
+        Debug.Log("Using item done");
+        myAction = ActionState.Null;
         c = null;
     }
 

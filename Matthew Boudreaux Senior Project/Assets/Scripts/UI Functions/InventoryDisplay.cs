@@ -23,6 +23,9 @@ public class InventoryDisplay : MonoBehaviour
     public Text selectedItemStat1;
     public Text selectedItemStat2;
 
+    GameObject buttonToRemove;
+
+
     void Start()
     {
         //CreateDisplay();
@@ -151,23 +154,47 @@ public class InventoryDisplay : MonoBehaviour
                 {
                     if (!itemsDisplayed.ContainsValue(myInventory.ConsumableInventory[i]))
                     {
+                        if (myInventory.ConsumableInventory[i].item.amount == 0)
+                        {
+                            
+                            foreach(var j in itemsDisplayed)
+                            {
+                                if(j.Value == myInventory.ConsumableInventory[i])
+                                {
+                                    buttonToRemove = j.Key;
+                                    itemsDisplayed.Remove(buttonToRemove);
+                                    buttons.Remove(buttonToRemove);
+                                    myInventory.RemoveItem(myInventory.ConsumableInventory[i]);
+                                    Destroy(buttonToRemove);
+
+                                }
+                            }
+                            break;
+                        }
+
                         GameObject newButton = Instantiate(buttonTemplate);
                         newButton.SetActive(true);
                         newButton.GetComponent<ButtonListButton>().SetItem(myInventory.ConsumableInventory[i].item);
 
-                        newButton.GetComponentInChildren<Text>().text = newButton.GetComponent<ButtonListButton>().myItem.Name + "(" + myInventory.ConsumableInventory[i].amount + ")";
-                        
+                        newButton.GetComponentInChildren<Text>().text = newButton.GetComponent<ButtonListButton>().myItem.Name + "(" + myInventory.ConsumableInventory[i].item.amount + ")";
+
                         newButton.transform.SetParent(myInventoryMenus[4].transform, false);
 
                         itemsDisplayed.Add(newButton, myInventory.ConsumableInventory[i]);
                         buttons.Add(newButton);
+                    }
+
+                    if (myInventory.ConsumableInventory[i].amount == 0)
+                    {
+                        itemsDisplayed.Remove(buttons[i]);
+                        buttons.Remove(buttons[i]);
+                        myInventory.RemoveItem(myInventory.ConsumableInventory[i]);
                     }
                 }
                 break;
         }
             
     }
-
 
     public void SetInventoryToDisplay(ItemType inType)
     {

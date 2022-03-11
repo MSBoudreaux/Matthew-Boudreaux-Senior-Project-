@@ -22,12 +22,11 @@ public class ButtonListButton : MonoBehaviour
 
     public void OnEnable()  
     {
-        if(myItem.type == ItemType.Consumable)
+       
+        if(myItem.type == ItemType.Consumable && transform.gameObject != null)
         {
-            transform.gameObject.GetComponentInChildren<Text>().text = myItem.Name + "(" + myInventoryDisplay.itemsDisplayed[transform.gameObject].amount + ")";
+            transform.gameObject.GetComponentInChildren<Text>().text = myItem.Name + "(" + myInventoryDisplay.itemsDisplayed[transform.gameObject].item.amount + ")";
         }
-
-
         transform.gameObject.GetComponent<ButtonListButton>().SetEquipIcon(myItem.isEquipped);
         
     }
@@ -67,7 +66,15 @@ public class ButtonListButton : MonoBehaviour
                 ConsumableObject consumableToDisplay = (ConsumableObject)myItemList.Items[myItem.Id];
                 if(consumableToDisplay.healValue != 0)
                 {
-                    myInventoryDisplay.selectedItemStat1.text = "Healing : " + consumableToDisplay.healValue.ToString();
+                    if(consumableToDisplay.healValue != 0)
+                    {
+                        myInventoryDisplay.selectedItemStat1.text = "Healing : " + consumableToDisplay.healValue.ToString();
+                    }
+                    else
+                    {
+                        myInventoryDisplay.selectedItemStat1.text = consumableToDisplay.ItemDescription;
+                    }
+
                 }
                 break;
         }

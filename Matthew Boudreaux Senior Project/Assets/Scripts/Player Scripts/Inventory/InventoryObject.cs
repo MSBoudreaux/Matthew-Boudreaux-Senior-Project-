@@ -41,12 +41,38 @@ public class InventoryObject : ScriptableObject
             {
                 if(ConsumableInventory[i].item.Id == _item.Id)
                 {
-                    ConsumableInventory[i].AddAmount(_item.amount);
+                    ConsumableInventory[i].item.amount += _item.amount;
                     return;
                 }
             }
             ConsumableInventory.Add(new InventorySlot(_item.Id, _item, _item.amount));
         }
+    }
+
+    public void RemoveItem(InventorySlot _slot)
+    {
+
+            if(_slot.item.type == ItemType.Weapon)
+            {
+                WeaponInventory.Remove(_slot);
+            }
+            else if(_slot.item.type == ItemType.Shield)
+            {
+                ShieldInventory.Remove(_slot);
+            }
+            else if(_slot.item.type == ItemType.Armor)
+            {
+                ArmorInventory.Remove(_slot);
+            }
+            else if(_slot.item.type == ItemType.Headwear)
+            {
+                HeadwearInventory.Remove(_slot);
+            }
+            else if(_slot.item.type == ItemType.Consumable)
+            {
+                ConsumableInventory.Remove(_slot);
+            }
+        
     }
 }
 

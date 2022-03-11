@@ -8,6 +8,9 @@ public class ConsumableObject : ItemObject
 {
 
     public int healValue;
+    //true is health, false is stress
+    public bool healType;
+    public string ItemDescription;
 
     private void Awake()
     {
