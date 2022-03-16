@@ -10,6 +10,9 @@ TagManager:
   - Interactable
   - Door
   - Trap
+  - pHitbox
+  - eHitbox
+  - TriggerVolume
   layers:
   - Default
   - TransparentFX

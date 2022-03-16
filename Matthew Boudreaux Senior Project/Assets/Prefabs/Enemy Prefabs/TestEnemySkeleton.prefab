@@ -42,6 +42,7 @@ GameObject:
   - component: {fileID: 3121666398059811922}
   - component: {fileID: 2315677662668182527}
   - component: {fileID: 1378601353208168011}
+  - component: {fileID: 172106159}
   m_Layer: 0
   m_Name: TestEnemySkeleton
   m_TagString: Enemy
@@ -106,6 +107,8 @@ MonoBehaviour:
   raycastPoint: {fileID: 5208955735971011816}
   idlePos: {x: 0, y: 0, z: 0}
   hasFound: 0
+  hitstunTime: 1
+  dieTime: 1
 --- !u!114 &1378601353208168011
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -127,6 +130,21 @@ MonoBehaviour:
   chaseSpeed: 2
   chaseDistance: 3
   myType: 0
+  myClass: 0
+--- !u!136 &172106159
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6870471999250657969}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.55
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1 &7081209056386230780
 GameObject:
   m_ObjectHideFlags: 0

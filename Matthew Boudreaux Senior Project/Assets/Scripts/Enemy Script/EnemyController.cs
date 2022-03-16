@@ -212,5 +212,13 @@ public class EnemyController : MonoBehaviour
         state = EnemyState.Death;
     }
 
-    
+    public void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("pHitbox"))
+        {
+            TakeDamage(other.GetComponent<PlayerHitbox>().damage);
+        }
+    }
+
+
 }
