@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ef5e88995dae994696b98a1e0fa3b05, type: 3}
+  m_Name: Minor Healing Tonic
+  m_EditorClassIdentifier: 
+  Name: Healing Elixir
+  Id: 0
+  amt: 1
+  prefab: {fileID: 0}
+  type: 4
+  uiDisplay: {fileID: 0}
+  description: 'A healing elixir, to be drunk. Restores a small amount of health.
+
+    Common,
+    but not very effective. These are popular among adventurers, soliders, and those
+    who can''t afford any better. But in these trying times, one must take all the
+    aid they can find: even a small taste of life can keep you going.'
+  healValue: 15
+  healType: 0
+  ItemDescription: Restores 15 health.

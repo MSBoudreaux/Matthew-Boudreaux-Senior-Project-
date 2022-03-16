@@ -30,13 +30,15 @@ public class FPSController : MonoBehaviour
     public ActionState myAction;
     public GameObject self;
 
+    public PlayerAnimator myAnim;
+
     //movement data
     public float speed = 12f;
     public CharacterController controller;
     public Camera myCam;
     Vector3 velocity;
     public float gravity = -9.81f;
-    public float jumpHeight = 3f;
+    public float jumpHeight = 2f;
     public float height = 1f;
     public float crouchSpeed = 0.5f;
     public Transform groundCheck;
@@ -60,10 +62,12 @@ public class FPSController : MonoBehaviour
     public Coroutine c;
 
 
+
+
     // Start is called before the first frame update
     void Start()
     {
-
+        myAnim = myStats.myAnim;
     }
 
     // Update is called once per frame
@@ -147,6 +151,7 @@ public class FPSController : MonoBehaviour
                         {
                             Debug.Log("Starting Attack");
                             myAction = ActionState.Attack;
+                            myAnim.AttackAnimStart();
                             c = StartCoroutine(attackWait(attackTime));
 
 
@@ -330,6 +335,7 @@ public class FPSController : MonoBehaviour
     {
         yield return new WaitForSeconds(time);
         Debug.Log("Attack done");
+        myAnim.AttackAnimEnd();
         myAction = ActionState.Null;
         c = null;
     }

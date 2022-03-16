@@ -9,9 +9,11 @@ public class WeaponObject : ItemObject
     public int damage;
     public float attackSpeed;
     public bool isTwoHanded;
+    public AnimationData attackAnim;
 
     private void Awake()
     {
         type = ItemType.Weapon;
+        attackSpeed = attackAnim.myAnim.length;
     }
 }

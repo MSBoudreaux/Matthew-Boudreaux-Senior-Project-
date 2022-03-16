@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c418dc1f2cfb924e9f5e8551ed3342c, type: 3}
+  m_Name: Dagger
+  m_EditorClassIdentifier: 
+  Name: Dagger
+  Id: 5
+  amt: 1
+  prefab: {fileID: 7407433209996419062, guid: 9f1676f2f439c34468c46209a828541e, type: 3}
+  type: 0
+  uiDisplay: {fileID: 0}
+  description: 'A small dagger, made for stabbing. It deals low damage, but can attack
+    quickly.
+
+    A weapon designed for jobs that only need one strike, but its small
+    size makes it ideal as a last resort. Perhaps speed and deceit were more valuable
+    in a better time.'
+  damage: 5
+  attackSpeed: 0.35
+  isTwoHanded: 0
+  attackAnim:
+    myAnim: {fileID: 7400000, guid: 4412d7a106f2e1a419ef401060912e61, type: 2}
+    hitboxTime: 0

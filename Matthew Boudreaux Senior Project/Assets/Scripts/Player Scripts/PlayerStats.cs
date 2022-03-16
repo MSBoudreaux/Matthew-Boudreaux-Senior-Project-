@@ -27,10 +27,6 @@ public class PlayerStats : MonoBehaviour
     public int Damage;
     public int Defense;
     public int BlockRating;
-    
-    
-    
-
 
     //Equipped Item Stats
     public ItemDatabaseObject itemDB;
@@ -53,6 +49,8 @@ public class PlayerStats : MonoBehaviour
     public List<Image> stamOrbs;
     public Slider stamRegenBar;
 
+    //Animation data
+    public PlayerAnimator myAnim;
     
 
     //Define unique abilities to check your items for here
@@ -117,6 +115,11 @@ public class PlayerStats : MonoBehaviour
                 {
                     equippedWeapon.isEquipped = false;
 
+                    if(myAnim.weapon.transform.Find("WepViewModel") != null)
+                    {
+                        Destroy(myAnim.weapon.transform.Find("WepViewModel").gameObject);
+                    }
+
                     _item.isEquipped = true;
 
                     equippedWeapon = _item;
@@ -130,6 +133,18 @@ public class PlayerStats : MonoBehaviour
                     {
                         Unequip(equippedShield);
                     }
+
+                    GameObject newWep = Instantiate(weaponObject.prefab, myAnim.weapon.transform.position, myAnim.weapon.transform.rotation);
+                    newWep.transform.SetParent(myAnim.weapon.transform);
+                    newWep.name = "WepViewModel";
+
+                    /*myAnim.weapon.transform.Find("WepModel").GetComponent<MeshFilter>().sharedMesh = weaponObject.prefab.gameObject.GetComponent<MeshFilter>().sharedMesh;
+                    myAnim.weapon.transform.Find("WepModel").GetComponent<MeshRenderer>().sharedMaterial = weaponObject.prefab.gameObject.GetComponent<MeshRenderer>().sharedMaterial;
+                    */
+
+                    //Call override animations behavior here
+                    myAnim.AttackAnimation = weaponObject.attackAnim.myAnim;
+
                 }
                 break;
             case ItemType.Shield:
@@ -200,6 +215,7 @@ public class PlayerStats : MonoBehaviour
                 equippedWeapon.isEquipped = false;
                 equippedWeapon = null;
                 weaponObject = null;
+                myAnim.AttackAnimation = null;
                 break;
             case ItemType.Shield:
                 equippedShield.isEquipped = false;

@@ -1,0 +1,109 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7733016704301366665
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7733016704301366711}
+  - component: {fileID: 7733016704301366710}
+  m_Layer: 0
+  m_Name: DaggerGround
+  m_TagString: Pickup
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7733016704301366711
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7733016704301366665}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 11.521756, y: 0.8777758, z: 4.9350924}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 492753102761823750}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7733016704301366710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7733016704301366665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9ce9c77429f40945abe2908911380da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 11400000, guid: 1558e9d0bb9ac9447af9c2cda7178219, type: 2}
+--- !u!1001 &7733016704030329674
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 7733016704301366711}
+    m_Modifications:
+    - target: {fileID: 7407433209996419062, guid: 9f1676f2f439c34468c46209a828541e, type: 3}
+      propertyPath: m_Name
+      value: DaggerObject
+      objectReference: {fileID: 0}
+    - target: {fileID: 7892468111884207436, guid: 9f1676f2f439c34468c46209a828541e, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7892468111884207436, guid: 9f1676f2f439c34468c46209a828541e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7892468111884207436, guid: 9f1676f2f439c34468c46209a828541e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7892468111884207436, guid: 9f1676f2f439c34468c46209a828541e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7892468111884207436, guid: 9f1676f2f439c34468c46209a828541e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071067
+      objectReference: {fileID: 0}
+    - target: {fileID: 7892468111884207436, guid: 9f1676f2f439c34468c46209a828541e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 7892468111884207436, guid: 9f1676f2f439c34468c46209a828541e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7892468111884207436, guid: 9f1676f2f439c34468c46209a828541e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7892468111884207436, guid: 9f1676f2f439c34468c46209a828541e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7892468111884207436, guid: 9f1676f2f439c34468c46209a828541e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7892468111884207436, guid: 9f1676f2f439c34468c46209a828541e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9f1676f2f439c34468c46209a828541e, type: 3}
+--- !u!4 &492753102761823750 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7892468111884207436, guid: 9f1676f2f439c34468c46209a828541e, type: 3}
+  m_PrefabInstance: {fileID: 7733016704030329674}
+  m_PrefabAsset: {fileID: 0}

@@ -38,6 +38,9 @@ public class EnemyController : MonoBehaviour
     public bool hasFound;
 
     Coroutine c;
+    //Set equal to length of hitstun animation
+    public float hitstunTime = 1f;
+    public float dieTime = 1f;
 
     public void Awake()
     {
@@ -136,6 +139,7 @@ public class EnemyController : MonoBehaviour
             case EnemyState.TakeDamage:
                 break;
             case EnemyState.Death:
+                Destroy(transform.gameObject);
                 break;
         }
     }
@@ -179,5 +183,34 @@ public class EnemyController : MonoBehaviour
         return hasFoundPlayer;
         
     }
+
+    public void TakeDamage(int inDamage)
+    {
+        stats.TakeDamage(inDamage);
+        if(stats.GetHealth() <= 0)
+        {
+            state = EnemyState.TakeDamage;
+            c = StartCoroutine(die(dieTime));
+        }
+        else
+        {
+            state = EnemyState.TakeDamage;
+            c = StartCoroutine(hitstun(hitstunTime));
+        }
+    }
+
+    IEnumerator hitstun(float time)
+    {
+        yield return new WaitForSeconds(time);
+        state = EnemyState.Active;
+    }
+
+    IEnumerator die(float time)
+    {
+        //Play death animation
+        yield return new WaitForSeconds(time);
+        state = EnemyState.Death;
+    }
+
     
 }

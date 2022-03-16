@@ -17,13 +17,22 @@ public class EnemyStats : MonoBehaviour
     public float chaseDistance;
 
     //Types of enemies. Used by EnemyController to determine enemy behavior.
-    public enum EnemyType
+    public enum EnemyAIType
     {
         skeleMelee,
         skeleRanged,
         skeleChest
     }
-    public EnemyType myType;
+    public EnemyAIType myType;
+
+    //Used for special effects againt certain enemy types
+    public enum EnemyClass
+    {
+        Undead,
+        Monster,
+        Corrupted
+    }
+    public EnemyClass myClass;
 
     public void Start()
     {
@@ -34,9 +43,9 @@ public class EnemyStats : MonoBehaviour
         return health;
     }
 
-    public void AddHealth(int inHealth)
+    public void TakeDamage(int inHealth)
     {
-        health += inHealth;
+        health -= inHealth;
     }
 
 }
