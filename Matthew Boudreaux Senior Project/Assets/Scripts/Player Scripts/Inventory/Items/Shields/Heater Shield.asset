@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b813042d65a1d744ba738038c9a2da05, type: 3}
+  m_Name: Heater Shield
+  m_EditorClassIdentifier: 
+  Name: Heater Shield
+  Id: 6
+  amt: 1
+  prefab: {fileID: 25814506694154088, guid: ef783ad95b65cf84294bf03632d346fc, type: 3}
+  type: 1
+  uiDisplay: {fileID: 0}
+  description: 'An old, rugged shield made of metal. It bears an ancient coat of
+    arms on its front face.
+
+    A shield made of sturdy material will absorb blows
+    better, though not well enough for its former owner, apparently.'
+  blockRating: 80
+  parryTime: 0.25

@@ -152,6 +152,11 @@ public class PlayerStats : MonoBehaviour
                 {
                     equippedShield.isEquipped = false;
 
+                    if (myAnim.shield.transform.Find("ShieldViewModel") != null)
+                    {
+                        Destroy(myAnim.shield.transform.Find("ShieldViewModel").gameObject);
+                    }
+
                     _item.isEquipped = true;
 
                     equippedShield = _item;
@@ -164,6 +169,12 @@ public class PlayerStats : MonoBehaviour
                     {
                         Unequip(equippedWeapon);
                     }
+
+                    GameObject newShield = Instantiate(shieldObject.prefab, myAnim.shield.transform.position, myAnim.shield.transform.rotation);
+                    newShield.transform.SetParent(myAnim.shield.transform);
+                    newShield.name = "ShieldViewModel";
+                    myAnim.BlockSpeedPercent = shieldObject.parryTime;
+
                 }
                 break;
             case ItemType.Armor:
