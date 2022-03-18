@@ -1,5 +1,18 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!65 &3750340860011668227
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6503044834482089380}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.0021128964, y: 0.020000005, z: 0.021187207}
+  m_Center: {x: 0.000045213554, y: -0.000000001874664, z: 0.00048577058}
 --- !u!1 &6513545343720797343
 GameObject:
   m_ObjectHideFlags: 0
@@ -45,19 +58,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: 893bd2bb41c562b4c9b1cbfe6a618cd7, type: 2}
---- !u!65 &3750340860011668227
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6503044834482089380}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.0021128964, y: 0.020000005, z: 0.021187207}
-  m_Center: {x: 0.000045213554, y: -0.000000001874664, z: 0.00048577058}
 --- !u!1001 &6513545343038192332
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -79,15 +79,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 797249854106422738, guid: ef783ad95b65cf84294bf03632d346fc, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.45793474
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 797249854106422738, guid: ef783ad95b65cf84294bf03632d346fc, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.046108365
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 797249854106422738, guid: ef783ad95b65cf84294bf03632d346fc, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.5329514
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 797249854106422738, guid: ef783ad95b65cf84294bf03632d346fc, type: 3}
       propertyPath: m_LocalRotation.w

@@ -10,8 +10,9 @@ public class PlayerAnimator : MonoBehaviour
     public bool isAttacking;
 
     public bool isBlocking;
+
+    //use animator triggers
     public bool isParrying;
-    public bool HasParried;
 
     public AnimatorOverrideController myOverrideController;
 
@@ -48,21 +49,31 @@ public class PlayerAnimator : MonoBehaviour
 
     public void ParryAnimStart()
     {
-
+        isParrying = true;
+        myAnimator.SetBool("IsParrying", isParrying);
     }
 
     public void ParryTriggered()
     {
-
+        myAnimator.SetTrigger("HasParried");
+        isParrying = false;
+        myAnimator.SetBool("IsParrying", isParrying);
     }
 
     public void BlockAnimStart()
     {
-
+        isParrying = false;
+        isBlocking = true;
+        myAnimator.SetBool("IsParrying", isParrying);
+        myAnimator.SetBool("IsBlocking", isBlocking);
     }
     
     public void BlockAnimEnd()
     {
+        isBlocking = false;
+        isParrying = false;
+        myAnimator.SetBool("IsParrying", isParrying);
+        myAnimator.SetBool("IsBlocking", isBlocking);
 
     }
 }

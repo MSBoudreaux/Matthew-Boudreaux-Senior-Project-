@@ -160,6 +160,7 @@ public class FPSController : MonoBehaviour
                         {
                             myAction = ActionState.Parry;
                             c = StartCoroutine(parryWait(parryTime));
+                            myAnim.ParryAnimStart();
                             Debug.Log("Starting to block");
 
                         }
@@ -182,6 +183,7 @@ public class FPSController : MonoBehaviour
                         if (Input.GetMouseButtonUp(1))
                         {
                             Debug.Log("Ending block early");
+                            myAnim.BlockAnimEnd();
                             StopCoroutine(c);
                             c = null;
                             myAction = ActionState.Null;
@@ -193,6 +195,7 @@ public class FPSController : MonoBehaviour
                         if (Input.GetMouseButtonUp(1))
                         {
                             Debug.Log("Ending block");
+                            myAnim.BlockAnimEnd();
                             myAction = ActionState.Null;
                         }
                         break;
@@ -346,10 +349,12 @@ public class FPSController : MonoBehaviour
         if (Input.GetMouseButton(1))
         {
             myAction = ActionState.Block;
+            myAnim.BlockAnimStart();
         }
         else
         {
             myAction = ActionState.Null;
+            myAnim.BlockAnimEnd();
         }
         Debug.Log("Parry done");
         c = null;

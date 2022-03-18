@@ -65,11 +65,6 @@ public class EnemyController : MonoBehaviour
         {
             agent.speed = stats.chaseSpeed;
         }
-
-        if((target.position - transform.position).magnitude <= stats.chaseDistance)
-        {
-            state = EnemyState.Fighting;
-        }
         
         switch (state)
         {
@@ -92,6 +87,12 @@ public class EnemyController : MonoBehaviour
 
                 if (hasFound)
                 {
+                    if ((target.position - transform.position).magnitude <= stats.chaseDistance)
+                    {
+                        state = EnemyState.Fighting;
+                        break;
+                    }
+
                     agent.SetDestination(target.position);
                     break;
                 }
@@ -100,6 +101,8 @@ public class EnemyController : MonoBehaviour
                 {
                     state = EnemyState.Searching;
                 }
+
+
                 break;
             case EnemyState.Searching:
 
@@ -139,7 +142,8 @@ public class EnemyController : MonoBehaviour
             case EnemyState.TakeDamage:
                 break;
             case EnemyState.Death:
-                Destroy(transform.gameObject);
+                c = StartCoroutine(die(dieTime));
+
                 break;
         }
     }
@@ -187,10 +191,10 @@ public class EnemyController : MonoBehaviour
     public void TakeDamage(int inDamage)
     {
         stats.TakeDamage(inDamage);
+
         if(stats.GetHealth() <= 0)
         {
-            state = EnemyState.TakeDamage;
-            c = StartCoroutine(die(dieTime));
+            state = EnemyState.Death;
         }
         else
         {
@@ -209,7 +213,7 @@ public class EnemyController : MonoBehaviour
     {
         //Play death animation
         yield return new WaitForSeconds(time);
-        state = EnemyState.Death;
+        Destroy(transform.gameObject);
     }
 
     public void OnTriggerEnter(Collider other)
