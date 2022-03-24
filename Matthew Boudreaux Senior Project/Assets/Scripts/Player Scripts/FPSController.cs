@@ -61,6 +61,10 @@ public class FPSController : MonoBehaviour
     public float parryTime;
     public Coroutine c;
 
+    /* use to implement I-frames later
+    float iFrames = 0.5f;
+    public bool isIFramed;
+    */
 
 
 
@@ -218,8 +222,8 @@ public class FPSController : MonoBehaviour
                 else if (Input.GetKeyDown("e") && myInteractType == InteractType.Interactable)
                 {
                     //Set case for if Interactable can trigger a cutscene here:
-                    ButtonScript button = interactable.gameObject.GetComponentInParent<ButtonScript>();
-                    button.InteractTrigger();
+                    TriggerScript trigger = interactable.gameObject.GetComponentInParent<TriggerScript>();
+                    trigger.InteractTrigger();
                 }
                 else if (Input.GetKeyDown("e") && myInteractType == InteractType.Pickup)
                 {
@@ -333,6 +337,37 @@ public class FPSController : MonoBehaviour
         parryTime = myStats.parryLength;
     }
 
+    public void TakeDamage(EnemyHitbox inHit)
+    {
+        int incDamage = inHit.damage;
+
+        if (inHit.isStressCausing)
+        {
+            incDamage = (int)(incDamage * ((100 - myStats.StressResist) / 100f));
+        }
+        else
+        {
+            incDamage = (int)(incDamage * ((100 - myStats.Defense) / 100f));
+        }
+        Debug.Log("Incoming Damage Before Shield" + incDamage);
+
+
+        if (myAction == ActionState.Block)
+        {
+            incDamage = (int)(incDamage * ((100 - myStats.BlockRating) / 100f));
+        }
+        Debug.Log("Final Incoming Damage" + incDamage);
+
+        if (inHit.isStressCausing)
+        {
+            myStats.AddStress(-incDamage);
+        }
+        else
+        {
+            myStats.AddHealth(-incDamage);
+        }
+    }
+
 
     public IEnumerator attackWait(float time)
     {
@@ -367,5 +402,35 @@ public class FPSController : MonoBehaviour
         myAction = ActionState.Null;
         c = null;
     }
+
+    public void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("eHitbox"))
+        {
+
+            EnemyHitbox inHit = other.GetComponent<EnemyHitbox>();
+            if(myAction == ActionState.Parry)
+            {
+                myAnim.ParryTriggered();
+                return;
+            }
+            else
+            {
+                TakeDamage(inHit);
+            }
+
+        }
+
+
+
+
+
+
+        else if (other.CompareTag("TriggerVolume")) 
+        {
+            other.GetComponent<TriggerScript>().InteractTrigger();
+        }
+    }
+
 
 }

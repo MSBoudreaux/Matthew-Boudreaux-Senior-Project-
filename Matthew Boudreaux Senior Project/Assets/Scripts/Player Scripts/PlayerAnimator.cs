@@ -20,7 +20,6 @@ public class PlayerAnimator : MonoBehaviour
     public GameObject shield;
 
     public AnimationClip AttackAnimation;
-    public float BlockSpeedPercent;
 
 
     // Start is called before the first frame update

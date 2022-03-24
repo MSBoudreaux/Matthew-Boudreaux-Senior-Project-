@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ButtonScript : MonoBehaviour
+public class TriggerScript : MonoBehaviour
 {
     public GameObject[] triggeredObjects;
     public bool startsCutscene;

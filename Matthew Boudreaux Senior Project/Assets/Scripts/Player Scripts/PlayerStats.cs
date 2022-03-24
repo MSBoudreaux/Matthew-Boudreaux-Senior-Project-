@@ -26,6 +26,7 @@ public class PlayerStats : MonoBehaviour
     public float parryLength;
     public int Damage;
     public int Defense;
+    public int StressResist;
     public int BlockRating;
 
     //Equipped Item Stats
@@ -173,7 +174,7 @@ public class PlayerStats : MonoBehaviour
                     GameObject newShield = Instantiate(shieldObject.prefab, myAnim.shield.transform.position, myAnim.shield.transform.rotation);
                     newShield.transform.SetParent(myAnim.shield.transform);
                     newShield.name = "ShieldViewModel";
-                    myAnim.BlockSpeedPercent = shieldObject.parryTime;
+                    myAnim.myAnimator.SetFloat("ParrySpeedMulti", parryLength);
 
                 }
                 break;
