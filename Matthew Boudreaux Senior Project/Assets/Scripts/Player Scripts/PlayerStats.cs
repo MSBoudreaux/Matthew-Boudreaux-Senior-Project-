@@ -174,7 +174,7 @@ public class PlayerStats : MonoBehaviour
                     GameObject newShield = Instantiate(shieldObject.prefab, myAnim.shield.transform.position, myAnim.shield.transform.rotation);
                     newShield.transform.SetParent(myAnim.shield.transform);
                     newShield.name = "ShieldViewModel";
-                    myAnim.myAnimator.SetFloat("ParrySpeedMulti", parryLength);
+                    myAnim.myAnimator.SetFloat("ParrySpeedMulti", 1 / parryLength );
 
                 }
                 break;

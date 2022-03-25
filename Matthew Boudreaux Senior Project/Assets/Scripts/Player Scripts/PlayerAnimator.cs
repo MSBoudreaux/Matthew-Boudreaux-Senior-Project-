@@ -61,10 +61,10 @@ public class PlayerAnimator : MonoBehaviour
 
     public void BlockAnimStart()
     {
-        isParrying = false;
         isBlocking = true;
-        myAnimator.SetBool("IsParrying", isParrying);
+        isParrying = false;
         myAnimator.SetBool("IsBlocking", isBlocking);
+        myAnimator.SetBool("IsParrying", isParrying);
     }
     
     public void BlockAnimEnd()
