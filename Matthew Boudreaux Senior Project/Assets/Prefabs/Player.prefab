@@ -5023,6 +5023,7 @@ MonoBehaviour:
   stamOrbs: []
   stamRegenBar: {fileID: 0}
   myAnim: {fileID: 3514990866062630096}
+  myAnimator: {fileID: 8394387307129370032}
 --- !u!136 &2058968179
 CapsuleCollider:
   m_ObjectHideFlags: 0

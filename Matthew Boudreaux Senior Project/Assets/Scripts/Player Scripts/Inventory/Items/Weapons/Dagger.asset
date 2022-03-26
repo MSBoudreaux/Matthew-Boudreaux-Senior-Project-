@@ -25,8 +25,9 @@ MonoBehaviour:
     size makes it ideal as a last resort. Perhaps speed and deceit were more valuable
     in a better time.'
   damage: 5
-  attackSpeed: 0.35
+  attackSpeed: 0.6166667
   isTwoHanded: 0
   attackAnim:
     myAnim: {fileID: 7400000, guid: 4412d7a106f2e1a419ef401060912e61, type: 2}
     hitboxTime: 0
+  myAnimController: {fileID: 22100000, guid: cad3cf2637e1ca545bf85122a23a2528, type: 2}

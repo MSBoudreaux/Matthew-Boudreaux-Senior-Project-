@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: DaggerAnimator
+  m_Controller: {fileID: 9100000, guid: def54a3bd0e6a124d8c8f06b16f2d64c, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 4412d7a106f2e1a419ef401060912e61, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 4412d7a106f2e1a419ef401060912e61, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: c3a54eb4e9542e342810cab4a4d65bfe, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: c3a54eb4e9542e342810cab4a4d65bfe, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 80dccc48d833def4d9c00d1c1bbb63fd, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 80dccc48d833def4d9c00d1c1bbb63fd, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 59fb9bba9c4f6d6419f85a833c7f3a5b, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 59fb9bba9c4f6d6419f85a833c7f3a5b, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 9a008a0c43f22694da75b1b99b2fd4f5, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 9a008a0c43f22694da75b1b99b2fd4f5, type: 2}

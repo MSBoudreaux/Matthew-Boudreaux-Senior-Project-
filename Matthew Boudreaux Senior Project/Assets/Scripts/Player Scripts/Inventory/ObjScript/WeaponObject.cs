@@ -10,6 +10,8 @@ public class WeaponObject : ItemObject
     public float attackSpeed;
     public bool isTwoHanded;
     public AnimationData attackAnim;
+    public AnimatorOverrideController myAnimController;
+    
 
     private void Awake()
     {

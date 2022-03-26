@@ -52,6 +52,7 @@ public class PlayerStats : MonoBehaviour
 
     //Animation data
     public PlayerAnimator myAnim;
+    public AnimatorOverrideController myAnimatorOverride;
     
 
     //Define unique abilities to check your items for here
@@ -139,12 +140,10 @@ public class PlayerStats : MonoBehaviour
                     newWep.transform.SetParent(myAnim.weapon.transform);
                     newWep.name = "WepViewModel";
 
-                    /*myAnim.weapon.transform.Find("WepModel").GetComponent<MeshFilter>().sharedMesh = weaponObject.prefab.gameObject.GetComponent<MeshFilter>().sharedMesh;
-                    myAnim.weapon.transform.Find("WepModel").GetComponent<MeshRenderer>().sharedMaterial = weaponObject.prefab.gameObject.GetComponent<MeshRenderer>().sharedMaterial;
-                    */
-
                     //Call override animations behavior here
-                    myAnim.AttackAnimation = weaponObject.attackAnim.myAnim;
+                    myAnimatorOverride = weaponObject.myAnimController;
+
+                    myAnim.myAnimator.runtimeAnimatorController = myAnimatorOverride;
 
                 }
                 break;
