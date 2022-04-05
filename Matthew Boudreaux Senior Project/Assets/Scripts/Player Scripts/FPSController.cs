@@ -171,10 +171,13 @@ public class FPSController : MonoBehaviour
 
                         else if (Input.GetKeyDown("q"))
                         {
-                            myAction = ActionState.UseItem;
-                            myStats.UseItem(myStats.equippedConsumable);
-                            c = StartCoroutine(itemWait(2.0f));
-                            Debug.Log("Using Item");
+                            if (myStats.consumableObject.IsConsumable && myStats.consumableObject.healValue != 0)
+                            {
+                                myAction = ActionState.UseItem;
+                                myStats.UseItem(myStats.equippedConsumable);
+                                c = StartCoroutine(itemWait(2.0f));
+                                Debug.Log("Using Item");
+                            }
                         }
 
                         break;
@@ -221,9 +224,27 @@ public class FPSController : MonoBehaviour
                 }
                 else if (Input.GetKeyDown("e") && myInteractType == InteractType.Interactable)
                 {
-                    //Set case for if Interactable can trigger a cutscene here:
+                    
                     TriggerScript trigger = interactable.gameObject.GetComponentInParent<TriggerScript>();
-                    trigger.InteractTrigger();
+
+                    if (trigger.requiresKey && !trigger.isUnlocked)
+                    {
+                        for (int i = 0; i < inventory.inventory.ConsumableInventory.Count; i++)
+                        {
+
+                            if (inventory.inventory.ConsumableInventory[i].ID == 8 && inventory.inventory.ConsumableInventory[i].amount != 0)
+                            {
+                                myStats.UseItem(inventory.inventory.ConsumableInventory[i].item);
+                                trigger.InteractTrigger();
+                            }
+                        }
+                    }
+                    else
+                    {
+                        trigger.InteractTrigger();
+                    }
+
+
                 }
                 else if (Input.GetKeyDown("e") && myInteractType == InteractType.Pickup)
                 {

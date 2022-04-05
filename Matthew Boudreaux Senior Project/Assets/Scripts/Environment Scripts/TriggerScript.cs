@@ -6,6 +6,10 @@ public class TriggerScript : MonoBehaviour
 {
     public GameObject[] triggeredObjects;
     public bool startsCutscene;
+    public bool requiresKey;
+    public bool isUnlocked = false;
+
+
 
     public void InteractTrigger()
     {
@@ -24,6 +28,8 @@ public class TriggerScript : MonoBehaviour
                 obj.GetComponent<DamageScript>().DealDamage();
             }
         }
+
+        isUnlocked = true;
 
     }
 

@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2ef5e88995dae994696b98a1e0fa3b05, type: 3}
-  m_Name: TestConsumable
+  m_Name: Skeleton Key
   m_EditorClassIdentifier: 
-  Name: Test Potion
-  Id: 2
+  Name: Skeleton Key
+  Id: 8
   amt: 1
-  prefab: {fileID: 7078688087878626707, guid: 13851daa287a9344ab3e4051c1f0003b, type: 3}
+  prefab: {fileID: 0}
   type: 4
   uiDisplay: {fileID: 0}
-  description: 'it''s a potion: heals ya real good'
-  IsConsumable: 1
-  healValue: 25
-  healType: 1
-  ItemDescription: 
+  description: An old key that fits simple locks.
+  IsConsumable: 0
+  healValue: 0
+  healType: 0
+  ItemDescription: Opens doors and chests.

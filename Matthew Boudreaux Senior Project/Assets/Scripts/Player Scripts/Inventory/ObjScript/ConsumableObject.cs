@@ -7,6 +7,8 @@ using UnityEngine;
 public class ConsumableObject : ItemObject
 {
 
+    public bool IsConsumable;
+
     public int healValue;
     //true is health, false is stress
     public bool healType;

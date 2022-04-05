@@ -265,7 +265,7 @@ public class PlayerStats : MonoBehaviour
 
     public void UseItem(Item _item) 
     {
-        if(_item.type == ItemType.Consumable && _item.amount != 0)
+        if (_item.type == ItemType.Consumable && _item.amount != 0 && _item.Id != 8)
         {
             if (consumableObject.healType)
             {
@@ -278,6 +278,10 @@ public class PlayerStats : MonoBehaviour
 
             _item.amount--;
 
+        }
+        else if(_item.Id == 8)
+        {
+            _item.amount--;
         }
 
     }

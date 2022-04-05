@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Minor Healing Tonic
   m_EditorClassIdentifier: 
   Name: Healing Elixir
-  Id: 0
+  Id: 7
   amt: 1
   prefab: {fileID: 0}
   type: 4
@@ -24,6 +24,7 @@ MonoBehaviour:
     but not very effective. These are popular among adventurers, soliders, and those
     who can''t afford any better. But in these trying times, one must take all the
     aid they can find: even a small taste of life can keep you going.'
+  IsConsumable: 1
   healValue: 15
   healType: 0
   ItemDescription: Restores 15 health.
