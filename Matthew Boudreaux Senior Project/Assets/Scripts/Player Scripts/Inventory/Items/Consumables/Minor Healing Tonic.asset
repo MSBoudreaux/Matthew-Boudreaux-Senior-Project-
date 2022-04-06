@@ -25,6 +25,6 @@ MonoBehaviour:
     who can''t afford any better. But in these trying times, one must take all the
     aid they can find: even a small taste of life can keep you going.'
   IsConsumable: 1
-  healValue: 15
-  healType: 0
-  ItemDescription: Restores 15 health.
+  healValue: 25
+  healType: 1
+  ItemDescription: Restores 25 health.

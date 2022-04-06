@@ -64,18 +64,8 @@ public class ButtonListButton : MonoBehaviour
                 break;
             case ItemType.Consumable:
                 ConsumableObject consumableToDisplay = (ConsumableObject)myItemList.Items[myItem.Id];
-                if(consumableToDisplay.healValue != 0)
-                {
-                    if(consumableToDisplay.healValue != 0)
-                    {
-                        myInventoryDisplay.selectedItemStat1.text = "Healing : " + consumableToDisplay.healValue.ToString();
-                    }
-                    else
-                    {
-                        myInventoryDisplay.selectedItemStat1.text = consumableToDisplay.ItemDescription;
-                    }
-
-                }
+                myInventoryDisplay.selectedItemStat1.text = consumableToDisplay.ItemDescription;
+                
 
                 break;
         }
