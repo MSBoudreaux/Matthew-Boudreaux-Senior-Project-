@@ -10,11 +10,14 @@ public class EnemyStats : MonoBehaviour
 
     public int primaryDamage;
     public int secondaryDamage;
+    public float attackOffset;
 
     public float LookRange;
     public float speed;
     public float chaseSpeed;
     public float chaseDistance;
+
+    public AnimationClip attack1;
 
     //Types of enemies. Used by EnemyController to determine enemy behavior.
     public enum EnemyAIType

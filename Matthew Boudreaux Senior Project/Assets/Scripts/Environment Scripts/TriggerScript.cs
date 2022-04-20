@@ -27,6 +27,14 @@ public class TriggerScript : MonoBehaviour
                 Debug.Log("Dealing Damage");
                 obj.GetComponent<DamageScript>().DealDamage();
             }
+
+            else if (obj.CompareTag("Enemy"))
+            {
+                Debug.Log("Waking Enemy Up");
+                obj.GetComponent<EnemyController>().state = EnemyController.EnemyState.Patrol;
+                obj.GetComponent<EnemyController>().isPatroller = true;
+
+            }
         }
 
         isUnlocked = true;

@@ -433,6 +433,7 @@ public class FPSController : MonoBehaviour
             if(myAction == ActionState.Parry)
             {
                 myAnim.ParryTriggered();
+                inHit.GetComponentInParent<EnemyController>().ParryStun();
                 return;
             }
             else
