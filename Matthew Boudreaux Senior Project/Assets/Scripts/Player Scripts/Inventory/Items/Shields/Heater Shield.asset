@@ -23,5 +23,5 @@ MonoBehaviour:
 
     A shield made of sturdy material will absorb blows
     better, though not well enough for its former owner, apparently.'
-  blockRating: 80
+  blockRating: 60
   parryTime: 0.25

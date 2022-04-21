@@ -1,0 +1,131 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4913015159817813600
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 552598121474506362}
+  - component: {fileID: 9105665451265268846}
+  m_Layer: 0
+  m_Name: TowerShieldGround
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &552598121474506362
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4913015159817813600}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 6.38, y: 1.1533009, z: 5.46}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 2276638660226412694}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &9105665451265268846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4913015159817813600}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9ce9c77429f40945abe2908911380da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 11400000, guid: 579ad651edb89e542a552b0dad22a47a, type: 2}
+--- !u!65 &3750191727344245140
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1500805197902326316}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.015441015, y: 0.0012997502, z: 0.024870925}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!1001 &6797339869888148595
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 552598121474506362}
+    m_Modifications:
+    - target: {fileID: 4741514520352982245, guid: fe5ef5ce1e7e0384f9486e8e90255fa2, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4741514520352982245, guid: fe5ef5ce1e7e0384f9486e8e90255fa2, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4741514520352982245, guid: fe5ef5ce1e7e0384f9486e8e90255fa2, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4741514520352982245, guid: fe5ef5ce1e7e0384f9486e8e90255fa2, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4741514520352982245, guid: fe5ef5ce1e7e0384f9486e8e90255fa2, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.70710677
+      objectReference: {fileID: 0}
+    - target: {fileID: 4741514520352982245, guid: fe5ef5ce1e7e0384f9486e8e90255fa2, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.70710677
+      objectReference: {fileID: 0}
+    - target: {fileID: 4741514520352982245, guid: fe5ef5ce1e7e0384f9486e8e90255fa2, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4741514520352982245, guid: fe5ef5ce1e7e0384f9486e8e90255fa2, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4741514520352982245, guid: fe5ef5ce1e7e0384f9486e8e90255fa2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4741514520352982245, guid: fe5ef5ce1e7e0384f9486e8e90255fa2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4741514520352982245, guid: fe5ef5ce1e7e0384f9486e8e90255fa2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 5370242359710670431, guid: fe5ef5ce1e7e0384f9486e8e90255fa2, type: 3}
+      propertyPath: m_Name
+      value: towerShieldObj
+      objectReference: {fileID: 0}
+    - target: {fileID: 5370242359710670431, guid: fe5ef5ce1e7e0384f9486e8e90255fa2, type: 3}
+      propertyPath: m_TagString
+      value: Pickup
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: fe5ef5ce1e7e0384f9486e8e90255fa2, type: 3}
+--- !u!1 &1500805197902326316 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5370242359710670431, guid: fe5ef5ce1e7e0384f9486e8e90255fa2, type: 3}
+  m_PrefabInstance: {fileID: 6797339869888148595}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &2276638660226412694 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4741514520352982245, guid: fe5ef5ce1e7e0384f9486e8e90255fa2, type: 3}
+  m_PrefabInstance: {fileID: 6797339869888148595}
+  m_PrefabAsset: {fileID: 0}

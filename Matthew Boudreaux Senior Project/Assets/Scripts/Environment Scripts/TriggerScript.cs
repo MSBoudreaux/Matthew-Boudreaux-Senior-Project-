@@ -35,6 +35,11 @@ public class TriggerScript : MonoBehaviour
                 obj.GetComponent<EnemyController>().isPatroller = true;
 
             }
+
+            else if (obj.CompareTag("PopupTrigger"))
+            {
+                obj.GetComponent<TriggerDialogue>().DialogueTrigger();
+            }
         }
 
         isUnlocked = true;

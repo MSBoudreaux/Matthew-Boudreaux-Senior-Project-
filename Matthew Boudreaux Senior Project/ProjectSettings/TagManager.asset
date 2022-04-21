@@ -13,6 +13,7 @@ TagManager:
   - pHitbox
   - eHitbox
   - TriggerVolume
+  - PopupTrigger
   layers:
   - Default
   - TransparentFX

@@ -7,8 +7,10 @@ public class DialogueManager : MonoBehaviour
 {
     public Text nameText;
     public Text dialogueText;
-    public int waitTime;
+    public Text popupText;
+    public float waitTime = 4f;
 
+    Coroutine c;
 
     private Queue<string> sentences;
     // Start is called before the first frame update
@@ -53,9 +55,21 @@ public class DialogueManager : MonoBehaviour
         dialogueText.text = null;
     }
 
-    public void DisplayTimedSentence()
+    public void DisplayTimedSentence(Dialogue myDialogue)
     {
+        c = null;
+        sentences.Clear();
+        sentences.Enqueue(myDialogue.sentences[0]);
+        string sentence = sentences.Dequeue();
+        Debug.Log(sentence);
+        popupText.text = sentence;
+        c = StartCoroutine(clearSentence(waitTime));
+    }
 
+    IEnumerator clearSentence(float time)
+    {
+        yield return new WaitForSeconds(time);
+        popupText.text = null;
     }
 
 }

@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b813042d65a1d744ba738038c9a2da05, type: 3}
+  m_Name: Tower Shield
+  m_EditorClassIdentifier: 
+  Name: Tower Shield
+  Id: 0
+  amt: 1
+  prefab: {fileID: 5370242359710670431, guid: fe5ef5ce1e7e0384f9486e8e90255fa2, type: 3}
+  type: 1
+  uiDisplay: {fileID: 0}
+  description: 
+  blockRating: 80
+  parryTime: 0.1

@@ -222,6 +222,7 @@ public class FPSController : MonoBehaviour
                     TriggerDialogue dialogue = interactable.gameObject.GetComponentInParent<TriggerDialogue>();
                     dialogue.DialogueTrigger();
                 }
+
                 else if (Input.GetKeyDown("e") && myInteractType == InteractType.Interactable)
                 {
                     
@@ -229,14 +230,24 @@ public class FPSController : MonoBehaviour
 
                     if (trigger.requiresKey && !trigger.isUnlocked)
                     {
+                        bool keyFound = false;
+
                         for (int i = 0; i < inventory.inventory.ConsumableInventory.Count; i++)
                         {
-
                             if (inventory.inventory.ConsumableInventory[i].ID == 8 && inventory.inventory.ConsumableInventory[i].amount != 0)
                             {
                                 myStats.UseItem(inventory.inventory.ConsumableInventory[i].item);
                                 trigger.InteractTrigger();
+                                TriggerDialogue dialogue = interactable.gameObject.GetComponentInParent<TriggerDialogue>();
+                                dialogue.TimedDialogueTrigger(1);
+                                keyFound = true;
                             }
+                        }
+                        if (!keyFound)
+                        {
+                            TriggerDialogue dialogue = interactable.gameObject.GetComponentInParent<TriggerDialogue>();
+                            dialogue.TimedDialogueTrigger(0);
+
                         }
                     }
                     else
