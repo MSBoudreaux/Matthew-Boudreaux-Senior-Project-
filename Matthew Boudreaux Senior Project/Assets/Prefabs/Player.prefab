@@ -5015,7 +5015,7 @@ MonoBehaviour:
   controller: {fileID: 1282614229}
   myCam: {fileID: 1422198503}
   gravity: -9.81
-  jumpHeight: 2
+  jumpHeight: 1
   height: 1
   crouchSpeed: 0.5
   groundCheck: {fileID: 1166382287}

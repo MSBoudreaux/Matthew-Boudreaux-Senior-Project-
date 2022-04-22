@@ -227,6 +227,7 @@ public class EnemyController : MonoBehaviour
                 break;
 
             case EnemyState.Attack:
+                RotateToFacePlayer();
                 break;
             case EnemyState.TakeDamage:
                 break;
@@ -251,7 +252,7 @@ public class EnemyController : MonoBehaviour
         Vector3 direction = (target.position - transform.position).normalized;
 
         lookRotation = Quaternion.LookRotation(direction);
-        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 2f);
+        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 3f);
     }
 
     public bool LookForPlayer()
