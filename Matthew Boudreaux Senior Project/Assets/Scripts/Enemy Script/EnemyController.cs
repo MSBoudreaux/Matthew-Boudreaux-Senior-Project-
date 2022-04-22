@@ -289,8 +289,7 @@ public class EnemyController : MonoBehaviour
             myAnim.RunAnimEnd();
             myAnim.WalkAnimEnd();
             myAnim.AttackAnimEnd();
-            myHitbox.anim.enabled = false;
-
+            //Hitbox
 
             myAnim.HitstunAnimEnd();
             myAnim.DeathAnimStart();
@@ -309,8 +308,8 @@ public class EnemyController : MonoBehaviour
             myAnim.RunAnimEnd();
             myAnim.WalkAnimEnd();
             myAnim.AttackAnimEnd();
-            myHitbox.anim.enabled = false;
 
+            //Hitbox
 
 
             myAnim.HitstunAnimStart();
@@ -328,8 +327,7 @@ public class EnemyController : MonoBehaviour
         myAnim.RunAnimEnd();
         myAnim.WalkAnimEnd();
         myAnim.AttackAnimEnd();
-        myHitbox.anim.enabled = false;
-
+        //Hitbox
 
 
         myAnim.HitstunAnimStart();
@@ -347,8 +345,7 @@ public class EnemyController : MonoBehaviour
     {
         yield return new WaitForSeconds(time);
         myAnim.HitstunAnimEnd();
-        myHitbox.anim.enabled = false;
-
+        //Hitbox
 
 
         state = EnemyState.Active;
@@ -377,8 +374,7 @@ public class EnemyController : MonoBehaviour
             myAnim.IdleAnimEnd();
             state = EnemyState.Attack;
             myAnim.AttackAnimStart();
-            myHitbox.anim.enabled = true;
-            myHitbox.anim.Play("Attack", -1, 0.0f);
+            //Hitbox
 
             c = StartCoroutine(AttackWait(stats.attackOffset));
         }
@@ -388,7 +384,7 @@ public class EnemyController : MonoBehaviour
     {
         yield return new WaitForSeconds(time);
         state = EnemyState.Active;
-        myHitbox.anim.enabled = false;
+        //Hitbox
         myAnim.AttackAnimEnd();
         c = null;
     }

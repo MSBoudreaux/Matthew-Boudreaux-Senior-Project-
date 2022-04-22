@@ -683,6 +683,9 @@ AnimatorStateMachine:
   - serializedVersion: 1
     m_State: {fileID: 6228925681403132302}
     m_Position: {x: 890, y: 150, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: 5202031922974936983}
+    m_Position: {x: 470, y: 380, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
@@ -793,7 +796,33 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 5824586129586528265, guid: 181b168a037fe99409ac1bb98be2055a, type: 3}
+  m_Motion: {fileID: 7400000, guid: 39bc17c1a9d05a14096ec37598b02334, type: 2}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
+--- !u!1102 &5202031922974936983
+AnimatorState:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Parrystun
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours: []
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: 7261814395882459800, guid: ef19b68ef69c48f458a85608f3f99b6a, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
