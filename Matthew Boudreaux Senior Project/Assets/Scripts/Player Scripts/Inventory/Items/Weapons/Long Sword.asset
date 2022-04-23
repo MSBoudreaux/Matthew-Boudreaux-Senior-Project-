@@ -13,16 +13,16 @@ MonoBehaviour:
   m_Name: Long Sword
   m_EditorClassIdentifier: 
   Name: Longsword
-  Id: 0
+  Id: 9
   amt: 1
   prefab: {fileID: 5488222019408986693, guid: 97c012fd2ab1d42478296cf342406c46, type: 3}
   type: 0
   uiDisplay: {fileID: 0}
   description: 
   damage: 10
-  attackSpeed: 0
+  attackSpeed: 0.5
   isTwoHanded: 0
   attackAnim:
     myAnim: {fileID: 0}
     hitboxTime: 0
-  myAnimController: {fileID: 0}
+  myAnimController: {fileID: 22100000, guid: d2e0953c2cebf294ebf8aa2725c41c4e, type: 2}
