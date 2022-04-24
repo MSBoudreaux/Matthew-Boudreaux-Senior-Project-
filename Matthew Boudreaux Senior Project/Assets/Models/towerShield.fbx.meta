@@ -1,14 +1,9 @@
 fileFormatVersion: 2
-guid: 0a432ac660a63ab43b30d06b74cd845e
+guid: 9473f36d1ed116045aaa0585078e2b6a
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: TowerShieldMat
-    second: {fileID: 2100000, guid: c7d626d9e21b41b48ad9edfa796869d7, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0

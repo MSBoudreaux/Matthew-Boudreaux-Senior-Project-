@@ -151,7 +151,7 @@ public class FPSController : MonoBehaviour
                 switch (myAction)
                 {
                     case ActionState.Null:
-                        if (Input.GetMouseButtonDown(0))
+                        if (Input.GetMouseButtonDown(0) && myStats.equippedWeapon.amount != 0)
                         {
                             Debug.Log("Starting Attack");
                             myAction = ActionState.Attack;
@@ -160,7 +160,7 @@ public class FPSController : MonoBehaviour
 
 
                         }
-                        else if (Input.GetMouseButton(1))
+                        else if (Input.GetMouseButton(1) && myStats.equippedShield.amount != 0)
                         {
                             myAction = ActionState.Parry;
                             c = StartCoroutine(parryWait(parryTime));

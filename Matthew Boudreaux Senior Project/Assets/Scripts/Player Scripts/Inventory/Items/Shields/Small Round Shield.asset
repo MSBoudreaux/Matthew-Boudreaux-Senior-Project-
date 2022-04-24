@@ -13,11 +13,12 @@ MonoBehaviour:
   m_Name: Small Round Shield
   m_EditorClassIdentifier: 
   Name: Small Roundshield
-  Id: 0
+  Id: 10
   amt: 1
-  prefab: {fileID: 4039906065062049833, guid: 9e9c5b6af58d6744aa10c05f81a65d56, type: 3}
+  prefab: {fileID: 502596744185107291, guid: 18e2c280cb49fd94b800b2fa359afafb, type: 3}
   type: 1
   uiDisplay: {fileID: 0}
-  description: 
+  description: 'A small metal buckler designed to deflect blows, but offering little
+    protection without the dexterity to use it effectively. '
   blockRating: 30
   parryTime: 0.5

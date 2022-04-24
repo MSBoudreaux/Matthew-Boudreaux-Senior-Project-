@@ -15,9 +15,11 @@ MonoBehaviour:
   Name: Tower Shield
   Id: 11
   amt: 1
-  prefab: {fileID: 5370242359710670431, guid: fe5ef5ce1e7e0384f9486e8e90255fa2, type: 3}
+  prefab: {fileID: 3586322797638654809, guid: 82207625e07aaa24c8039cf85062f577, type: 3}
   type: 1
   uiDisplay: {fileID: 0}
-  description: 
+  description: A huge, cumbersome shield with no ornamentation. Deflects blows well,
+    but anything of this size is too bulky to do more than put in front of you and
+    hope it holds firm.
   blockRating: 80
   parryTime: 0.1

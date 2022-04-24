@@ -18,7 +18,9 @@ MonoBehaviour:
   prefab: {fileID: 6564444014033329392, guid: 0bf956449e268dd41b3908e5c891e6f8, type: 3}
   type: 0
   uiDisplay: {fileID: 0}
-  description: 
+  description: More rust than metal, what may have once been a beautiful weapon is
+    now devoid of any redeeming qualities. Going barehanded may be more dignified,
+    but this may at least keep you alive.
   damage: 3
   attackSpeed: 0.5
   isTwoHanded: 0

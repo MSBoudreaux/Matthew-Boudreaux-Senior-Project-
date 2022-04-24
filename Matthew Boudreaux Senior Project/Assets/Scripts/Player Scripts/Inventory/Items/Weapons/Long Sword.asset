@@ -18,7 +18,12 @@ MonoBehaviour:
   prefab: {fileID: 5488222019408986693, guid: 97c012fd2ab1d42478296cf342406c46, type: 3}
   type: 0
   uiDisplay: {fileID: 0}
-  description: 
+  description: 'A standard-issue weapon for high-ranking warriors, as much a status
+    symbol as a weapon. Well-balanced and deadly.
+
+    Weapons of this quality are
+    reserved for the well-off, or given to the exceptionally skilled. One wonders
+    where either went wrong to end up down here.'
   damage: 10
   attackSpeed: 0.5
   isTwoHanded: 0
