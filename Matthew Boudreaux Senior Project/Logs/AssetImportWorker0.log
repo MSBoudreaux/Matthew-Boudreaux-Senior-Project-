@@ -144,3 +144,4 @@ Received Import Request.
 Start importing Assets/Models/Level 1 1/stone_texture.jpg using Guid(59ded00119d6dbc4389fc2a01e3e4329) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c2832ffa7ce8dd6d118a9b18a9cc953d') in 0.008780 seconds 
   Import took 0.011462 seconds .
 
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
