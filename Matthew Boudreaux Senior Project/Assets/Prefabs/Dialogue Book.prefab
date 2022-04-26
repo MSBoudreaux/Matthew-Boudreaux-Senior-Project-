@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 725324692062225151}
   - component: {fileID: 8353490553642234977}
   - component: {fileID: 498635728661604542}
+  - component: {fileID: 2978869401646980537}
   m_Layer: 0
   m_Name: Cube
-  m_TagString: Untagged
+  m_TagString: Dialogue
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -81,6 +82,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &2978869401646980537
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3632050387981306901}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.0040000007, y: 0.0039999997, z: 0.0005831091}
+  m_Center: {x: 0, y: 0, z: -0.0001730387}
 --- !u!1 &3831060012067521312
 GameObject:
   m_ObjectHideFlags: 0
@@ -126,7 +140,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f968f53bca4362479d4a1aac07535d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myDialogue: []
+  myDialogue:
+  - sentences:
+    - These are my last words.
+    - If you are reading this, you have breached the seal that was my life's last
+      work.
+    - 'I was the only one left: the others are tainted by what they found. '
+    - 'But now that you have entered this place, the only way to proceed is down. '
+    - I pray you do not encounter those I left behind.
+    name: Tattered Journal
   isAutoRead: 0
 --- !u!1 &4701109983891652193
 GameObject:
@@ -141,7 +163,7 @@ GameObject:
   - component: {fileID: 5932269577764215904}
   m_Layer: 0
   m_Name: Cube.001
-  m_TagString: Untagged
+  m_TagString: Dialogue
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
