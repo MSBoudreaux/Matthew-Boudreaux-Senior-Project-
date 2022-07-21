@@ -40,6 +40,11 @@ public class TriggerScript : MonoBehaviour
             {
                 obj.GetComponent<TriggerDialogue>().DialogueTrigger();
             }
+            
+            else if (obj.CompareTag("SaveLoadTest"))
+            {
+                obj.GetComponent<SaveLoadObject>().SaveLoad();
+            }
         }
 
         isUnlocked = true;

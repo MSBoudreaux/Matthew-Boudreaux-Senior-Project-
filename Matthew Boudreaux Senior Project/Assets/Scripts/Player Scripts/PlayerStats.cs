@@ -2,8 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEditor;
+using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
 
-public class PlayerStats : MonoBehaviour
+[System.Serializable]
+public class PlayerStats : MonoBehaviour, ISerializationCallbackReceiver
 {
 
     public int health;
@@ -53,6 +57,9 @@ public class PlayerStats : MonoBehaviour
     //Animation data
     public PlayerAnimator myAnim;
     public AnimatorOverrideController myAnimatorOverride;
+
+    //Save data
+    public string savePath = "/player.Save";
     
 
     //Define unique abilities to check your items for here
@@ -61,6 +68,14 @@ public class PlayerStats : MonoBehaviour
 
     }
 
+    private void OnEnable()
+    {
+#if UNITY_EDITOR
+        itemDB = (ItemDatabaseObject)AssetDatabase.LoadAssetAtPath("Assets/Resources/Database.asset", typeof(ItemDatabaseObject));
+#else
+        database = Resources.Load<ItemDatabaseObject>("Database");
+#endif
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -142,7 +157,6 @@ public class PlayerStats : MonoBehaviour
 
                     //Call override animations behavior here
                     myAnimatorOverride = weaponObject.myAnimController;
-
                     myAnim.myAnimator.runtimeAnimatorController = myAnimatorOverride;
 
                 }
@@ -284,5 +298,36 @@ public class PlayerStats : MonoBehaviour
             _item.amount--;
         }
 
+    }
+
+    public void Save()
+    {
+        Debug.Log("Saving Player");
+        string saveData = JsonUtility.ToJson(this, true);
+        BinaryFormatter bf = new BinaryFormatter();
+        FileStream file = File.Create(string.Concat(Application.persistentDataPath, savePath));
+        bf.Serialize(file, saveData);
+        file.Close();
+
+    }
+
+    public void Load()
+    {
+        if (File.Exists(string.Concat(Application.persistentDataPath, savePath)))
+        {
+            Debug.Log("Loading Player");
+            BinaryFormatter bf = new BinaryFormatter();
+            FileStream file = File.Open(string.Concat(Application.persistentDataPath, savePath), FileMode.Open);
+            JsonUtility.FromJsonOverwrite(bf.Deserialize(file).ToString(), this);
+            file.Close();
+        }
+    }
+
+    public void OnBeforeSerialize()
+    {
+    }
+
+    public void OnAfterDeserialize()
+    {
     }
 }

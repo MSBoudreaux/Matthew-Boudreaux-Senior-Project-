@@ -14,6 +14,7 @@ TagManager:
   - eHitbox
   - TriggerVolume
   - PopupTrigger
+  - SaveLoadTest
   layers:
   - Default
   - TransparentFX
