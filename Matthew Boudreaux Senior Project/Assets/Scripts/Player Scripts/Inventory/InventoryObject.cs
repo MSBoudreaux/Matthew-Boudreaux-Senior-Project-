@@ -12,6 +12,7 @@ public class InventoryObject : ScriptableObject, ISerializationCallbackReceiver
 {
 
     public string savePath;
+    public List<Item> savedInventory;
 
     private ItemDatabaseObject database;
     public List<InventorySlot> WeaponInventory = new List<InventorySlot>();
@@ -24,6 +25,19 @@ public class InventoryObject : ScriptableObject, ISerializationCallbackReceiver
     {
 #if UNITY_EDITOR
         database = (ItemDatabaseObject)AssetDatabase.LoadAssetAtPath("Assets/Resources/Database.asset", typeof(ItemDatabaseObject));
+
+        if(savedInventory.Count > 0)
+        {
+            for (int i = 0; i < savedInventory.Count; i++)
+            {
+                AddItem(savedInventory[i]);
+                if (savedInventory[i].isEquipped)
+                {
+                    FindObjectOfType<PlayerStats>().Equip(savedInventory[i]);
+                }
+            }
+        }
+
 #else
         database = Resources.Load<ItemDatabaseObject>("Database");
 #endif
@@ -92,6 +106,7 @@ public class InventoryObject : ScriptableObject, ISerializationCallbackReceiver
 
     public void OnAfterDeserialize()
     {
+        /*
         //wep
         for(int i = 0; i < WeaponInventory.Count; i++)
         {
@@ -118,10 +133,47 @@ public class InventoryObject : ScriptableObject, ISerializationCallbackReceiver
         {
             ConsumableInventory[i].item = new Item(database.GetItem[ConsumableInventory[i].ID]);
         }
+        */
+    }
+
+    public void SaveInventory()
+    {
+        savedInventory.Clear();
+
+        for (int i = 0; i < WeaponInventory.Count; i++)
+        {
+            savedInventory.Add(WeaponInventory[i].item);
+        }
+        //shield
+        for (int i = 0; i < ShieldInventory.Count; i++)
+        {
+            savedInventory.Add(ShieldInventory[i].item);
+
+        }
+        //armor
+        for (int i = 0; i < ArmorInventory.Count; i++)
+        {
+            savedInventory.Add(ArmorInventory[i].item);
+
+        }
+        //accessory
+        for (int i = 0; i < HeadwearInventory.Count; i++)
+        {
+            savedInventory.Add(HeadwearInventory[i].item);
+
+        }
+
+        //consumable
+        for (int i = 0; i < ConsumableInventory.Count; i++)
+        {
+            savedInventory.Add(ConsumableInventory[i].item);
+
+        }
     }
 
     public void Save()
     {
+        SaveInventory();
         string saveData = JsonUtility.ToJson(this, true);
         BinaryFormatter bf = new BinaryFormatter();
         FileStream file = File.Create(string.Concat(Application.persistentDataPath, savePath));
@@ -148,11 +200,7 @@ public class InventoryObject : ScriptableObject, ISerializationCallbackReceiver
 
     }
 }
-[System.Serializable]
-public class InvItemAttributes
-{
 
-}
 
 [System.Serializable]
 public class InventorySlot

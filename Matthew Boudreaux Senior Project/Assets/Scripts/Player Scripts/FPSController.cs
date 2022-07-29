@@ -306,6 +306,10 @@ public class FPSController : MonoBehaviour
         inventory.inventory.HeadwearInventory.Clear();
         inventory.inventory.ShieldInventory.Clear();
         inventory.inventory.ConsumableInventory.Clear();
+        inventory.inventory.savedInventory.Clear();
+        Destroy(GameObject.Find("WepViewModel"));
+        Destroy(GameObject.Find("ShieldViewModel"));
+
 
     }
 

@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: TestInventory
   m_EditorClassIdentifier: 
   savePath: /inventory.Save
+  savedInventory: []
   WeaponInventory: []
   ShieldInventory: []
   ArmorInventory: []
