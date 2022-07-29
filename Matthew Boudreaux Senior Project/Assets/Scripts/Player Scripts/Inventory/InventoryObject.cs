@@ -148,7 +148,11 @@ public class InventoryObject : ScriptableObject, ISerializationCallbackReceiver
 
     }
 }
+[System.Serializable]
+public class InvItemAttributes
+{
 
+}
 
 [System.Serializable]
 public class InventorySlot

@@ -3216,6 +3216,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1036302596}
   - component: {fileID: 1036302597}
+  - component: {fileID: 30839707647047042}
   m_Layer: 0
   m_Name: PlayerManager
   m_TagString: Untagged
@@ -3250,6 +3251,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
+--- !u!114 &30839707647047042
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1036302595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65bf221d08ff04a4d82dafff6c48c0b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myStats: {fileID: 1282614233}
+  myInventory: {fileID: 11400000, guid: b41cc5a7c3aa7584e9d13617652f497e, type: 2}
 --- !u!1 &1104817177
 GameObject:
   m_ObjectHideFlags: 0
@@ -5115,6 +5130,7 @@ MonoBehaviour:
   stamRegenBar: {fileID: 0}
   myAnim: {fileID: 3514990866062630096}
   myAnimatorOverride: {fileID: 0}
+  savePath: /player.Save
 --- !u!136 &2058968179
 CapsuleCollider:
   m_ObjectHideFlags: 0

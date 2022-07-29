@@ -10,11 +10,11 @@ public class SaveLoadObject : MonoBehaviour
     {
         if (isSaveObj)
         {
-            FindObjectOfType<PlayerStats>().Save();
+            FindObjectOfType<SaveLoadSystem>().Save();
         }
         else
         {
-            FindObjectOfType<PlayerStats>().Load();
+            FindObjectOfType<SaveLoadSystem>().Load();
         }
     }
 
