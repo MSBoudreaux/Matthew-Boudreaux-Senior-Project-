@@ -186,6 +186,7 @@ public class InventoryDisplay : MonoBehaviour
 
                     if (myInventory.ConsumableInventory[i].amount == 0)
                     {
+
                         itemsDisplayed.Remove(buttons[i]);
                         buttons.Remove(buttons[i]);
                         myInventory.RemoveItem(myInventory.ConsumableInventory[i]);

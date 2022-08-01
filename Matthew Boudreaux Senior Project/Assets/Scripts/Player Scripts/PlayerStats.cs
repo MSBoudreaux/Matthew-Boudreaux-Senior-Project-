@@ -241,11 +241,13 @@ public class PlayerStats : MonoBehaviour, ISerializationCallbackReceiver
                 equippedWeapon = null;
                 weaponObject = null;
                 myAnim.AttackAnimation = null;
+                Destroy(myAnim.weapon.transform.Find("WepViewModel").gameObject);
                 break;
             case ItemType.Shield:
                 equippedShield.isEquipped = false;
                 equippedShield = null;
                 shieldObject = null;
+                Destroy(myAnim.shield.transform.Find("ShieldViewModel").gameObject);
                 break;
             case ItemType.Armor:
                 equippedArmor.isEquipped = false;
@@ -259,6 +261,10 @@ public class PlayerStats : MonoBehaviour, ISerializationCallbackReceiver
                 headwearObject = null;
                 break;
             case ItemType.Consumable:
+                equippedConsumable.isEquipped = false;
+                equippedConsumable = null;
+                consumableObject = null;
+
                 break;
 
         }
