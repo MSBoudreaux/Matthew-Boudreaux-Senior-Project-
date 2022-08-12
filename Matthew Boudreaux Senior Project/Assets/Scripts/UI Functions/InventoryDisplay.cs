@@ -25,6 +25,15 @@ public class InventoryDisplay : MonoBehaviour
 
     GameObject buttonToRemove;
 
+    public void ClearOnLoad()
+    {
+        itemsDisplayed.Clear();
+        foreach (GameObject obj in buttons)
+        {
+            Destroy(obj);
+        }
+        buttons.Clear();
+    }
 
     void Start()
     {

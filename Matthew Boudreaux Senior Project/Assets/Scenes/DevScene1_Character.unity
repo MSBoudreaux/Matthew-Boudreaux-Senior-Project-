@@ -175,7 +175,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 45e529f14a3e740459600860a41e4609, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -455,7 +455,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 45e529f14a3e740459600860a41e4609, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -589,6 +589,7 @@ MonoBehaviour:
   - {fileID: 1304575021}
   startsCutscene: 0
   requiresKey: 1
+  keyID: 0
   isUnlocked: 0
 --- !u!95 &467744611
 Animator:
@@ -764,7 +765,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 45e529f14a3e740459600860a41e4609, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -901,6 +902,7 @@ MonoBehaviour:
   - {fileID: 1869079513}
   startsCutscene: 0
   requiresKey: 0
+  keyID: 0
   isUnlocked: 0
 --- !u!135 &655220128
 SphereCollider:
@@ -1044,7 +1046,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 45e529f14a3e740459600860a41e4609, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1380,6 +1382,7 @@ MonoBehaviour:
   - {fileID: 1650631760}
   startsCutscene: 0
   requiresKey: 0
+  keyID: 0
   isUnlocked: 0
 --- !u!136 &953006479
 CapsuleCollider:
@@ -1414,7 +1417,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 45e529f14a3e740459600860a41e4609, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1495,7 +1498,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 45e529f14a3e740459600860a41e4609, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1754,6 +1757,7 @@ MonoBehaviour:
   - {fileID: 1337915775}
   startsCutscene: 0
   requiresKey: 0
+  keyID: 0
   isUnlocked: 0
 --- !u!65 &1496623869
 BoxCollider:
@@ -1904,6 +1908,7 @@ MonoBehaviour:
   - {fileID: 1988352818}
   startsCutscene: 0
   requiresKey: 0
+  keyID: 0
   isUnlocked: 0
 --- !u!135 &1666883828
 SphereCollider:
@@ -2225,6 +2230,7 @@ MonoBehaviour:
   - {fileID: 1819712550}
   startsCutscene: 0
   requiresKey: 0
+  keyID: 0
   isUnlocked: 0
 --- !u!65 &2013479031
 BoxCollider:
@@ -2305,7 +2311,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 45e529f14a3e740459600860a41e4609, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2466,6 +2472,7 @@ MonoBehaviour:
   - {fileID: 2135927458}
   startsCutscene: 0
   requiresKey: 0
+  keyID: 0
   isUnlocked: 0
 --- !u!65 &2124209801
 BoxCollider:

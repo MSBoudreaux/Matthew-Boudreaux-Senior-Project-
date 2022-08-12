@@ -28,7 +28,12 @@ public class ButtonListButton : MonoBehaviour
             transform.gameObject.GetComponentInChildren<Text>().text = myItem.Name + "(" + myInventoryDisplay.itemsDisplayed[transform.gameObject].item.amount + ")";
         }
         transform.gameObject.GetComponent<ButtonListButton>().SetEquipIcon(myItem.isEquipped);
-        
+
+        if(myItem == null)
+        {
+            myInventoryDisplay.buttons.Remove(this.gameObject);
+            Destroy(this.gameObject);
+        }
     }
 
     public void SetItem(Item _item)

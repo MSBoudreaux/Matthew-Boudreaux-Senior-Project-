@@ -9,6 +9,7 @@ public class SaveLoadSystem : MonoBehaviour
 {
     public PlayerStats myStats;
     public InventoryObject myInventory;
+    public InventoryDisplay myInvDisplay;
 
     public void Save()
     {
@@ -20,6 +21,7 @@ public class SaveLoadSystem : MonoBehaviour
     {
         myInventory.Load();
         myStats.Load();
+        myInvDisplay.ClearOnLoad();
     }
 
 

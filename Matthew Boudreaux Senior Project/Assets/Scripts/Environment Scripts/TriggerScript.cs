@@ -7,6 +7,7 @@ public class TriggerScript : MonoBehaviour
     public GameObject[] triggeredObjects;
     public bool startsCutscene;
     public bool requiresKey;
+    public int keyID;
     public bool isUnlocked = false;
 
 

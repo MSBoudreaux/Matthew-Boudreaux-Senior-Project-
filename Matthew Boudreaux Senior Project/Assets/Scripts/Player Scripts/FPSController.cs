@@ -234,7 +234,7 @@ public class FPSController : MonoBehaviour
 
                         for (int i = 0; i < inventory.inventory.ConsumableInventory.Count; i++)
                         {
-                            if (inventory.inventory.ConsumableInventory[i].ID == 8 && inventory.inventory.ConsumableInventory[i].amount != 0)
+                            if (inventory.inventory.ConsumableInventory[i].ID == trigger.keyID && inventory.inventory.ConsumableInventory[i].amount != 0)
                             {
                                 myStats.UseItem(inventory.inventory.ConsumableInventory[i].item);
                                 trigger.InteractTrigger();
