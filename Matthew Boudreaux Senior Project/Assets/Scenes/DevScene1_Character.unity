@@ -589,7 +589,7 @@ MonoBehaviour:
   - {fileID: 1304575021}
   startsCutscene: 0
   requiresKey: 1
-  keyID: 0
+  keyID: 8
   isUnlocked: 0
 --- !u!95 &467744611
 Animator:
